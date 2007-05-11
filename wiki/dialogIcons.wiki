@@ -1,0 +1,15 @@
+Dialog Icons
+
+These are the current DialogBox, InputBox and MessageBox Icons that are available.
+
+To define the windows style vs motif/java style you can do that in your window options:
+  * Motif
+    * [http://gerbildrop.com/downloads/metal-error.png] -- Error Icon (Motif)
+    * [http://gerbildrop.com/downloads/metal-info.png] -- Info Icon (Motif)
+    * [http://gerbildrop.com/downloads/metal-question.png] -- Question Icon (Motif)
+    * [http://gerbildrop.com/downloads/metal-warning.png] -- Warning Icon (Motif)
+  * Windows
+    * [http://gerbildrop.com/downloads/windows-error.png] -- Error Icon (Windows)
+    * [http://gerbildrop.com/downloads/windows-info.png] -- Info Icon (Windows)
+    * [http://gerbildrop.com/downloads/windows-question.png] -- Question Icon (Windows)
+    * [http://gerbildrop.com/downloads/windows-warning.png] -- Warning Icon (Windows)

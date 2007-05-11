@@ -1,0 +1,37 @@
+#summary One-sentence summary of this page.
+
+= ActionEvent =
+
+[ActionEvent] is the event fired off by a _BComponent_ to the listeners of your _BComponent_
+
+To find out what *action* was fired off you can simply ask the [ActionEvent]
+
+{{{
+String action = event.getAction();
+}}}
+
+From the example above it's clear that _getAction()_ returns a _String_.  From there you check the //String// against known actions you want performed.
+
+e.g.
+{{{
+if (action.equals("back")) {
+    //we're going to go back
+}
+}}}
+
+What about filtering by a specific _BComponent_ type?  For example, you only want to work with an event that is from a _BButton_.
+
+{{{
+Object source = event.getSource();
+if (source instanceof BButton) {
+    //now perform an action
+}
+}}}
+
+What if you want to process one event from your _BComponent_ then pass the rest of the processing on to another listener?
+
+{{{
+event.dispatch(listener); // where listener is a defined listener in your class or another class that has a local instance in this class
+}}}
+
+See also [Navigation]
