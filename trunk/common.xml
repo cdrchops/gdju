@@ -1,0 +1,54 @@
+<project>
+    <property name="src.dir"      value="../src"/>
+    <property name="build.dir"    value="../../../build"/>
+    <property name="classes.dir"  value="../../../build/classes"/>
+    <property name="lib.dir"  value="../../../libs"/>
+    <property name="jar.dir"  value="../../../dist"/>
+
+    <!-- project classpath & xml catalogs -->
+    <path id="gdju.classpath">
+        <pathelement path="${build.dir}"/>
+        <fileset dir="${jar.dir}" />
+        <fileset dir="${lib.dir}" />
+    </path>
+
+
+    <target name="compile">
+
+        <depend srcDir="${src.dir}"
+                destDir="${build.dir}"
+                cache="${build.dir}/.depend"
+                classpathref="gdju.classpath"/>
+        <javac srcdir="${src.dir}"
+               destdir="${classes.dir}"
+               debug="${compile.debug}"
+               deprecation="${compile.deprecation}"
+               optimize="${compile.optimize}"
+               classpathref="gdju.classpath"/>
+    </target>
+
+    <target name="srcJar">
+        <jar destfile="${jar.dir}/${ant.project.name}-src.jar"
+               basedir="${src.dir}/">
+            <include name="${src.includes}"/>
+        </jar>
+    </target>
+
+    <target name="jar">
+        <antcall target="compile">
+            <param name="${name}" value="${value}"/>
+        </antcall>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar"
+               basedir="${classes.dir}">
+            <include name="${src.includes}"/>
+        </jar>
+    </target>
+
+    <target name="zip">
+        <jar destfile="${jar.dir}/${ant.project.name}.zip"
+               basedir="${jar.dir}">
+            <include name="${ant.project.name}-src.jar"/>
+            <include name="${ant.project.name}.jar"/>
+        </jar>
+    </target>
+</project>
