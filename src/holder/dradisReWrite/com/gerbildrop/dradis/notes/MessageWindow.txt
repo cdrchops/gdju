@@ -1,0 +1,101 @@
+package com.gerbildrop.dradis.messaging;
+
+import com.gerbildrop.austin.dradis.imaging.GenericImage;
+import com.gerbildrop.austin.dradis.imaging.ImageUtil;
+
+import java.awt.*;
+
+/**
+ * @author timo
+ * @version ${1.1}
+ * @since Oct 14, 2006 2:06:05 PM
+ */
+public class MessageWindow {
+    private static final GenericImage messageFrame = new com.gerbildrop.austin.dradis.imaging.GenericImage();
+
+    private Rectangle minMessageWindow = new Rectangle(968, 435, 15, 30);
+    private Rectangle closeMessageWindow = new Rectangle(988, 435, 15, 30);
+
+    private boolean showMessage = false;
+    private boolean moveMessage = false;
+    private boolean minimized = false;
+
+    private StringBuffer message = new StringBuffer();
+    private StringBuffer messageTitle = new StringBuffer("THIS IS A TEST OF THE MESSAGE");
+
+    public static void loadMessageWindow(String path) {
+        ImageUtil.loadImage(messageFrame, path + "MessageFrame.png", 567, 429);
+    }
+
+    public boolean checkCollisions(Rectangle r2) {
+        return (r2.intersects(messageFrame.getRect()));
+    }
+
+    public boolean showMessage() {
+        return showMessage;
+    }
+
+    public void setShowMessage(final boolean showMessage) {
+        this.showMessage = showMessage;
+    }
+
+    public Rectangle getCloseMessageWindow() {
+        return closeMessageWindow;
+    }
+
+    public void setCloseMessageWindow(final Rectangle closeMessageWindow) {
+        this.closeMessageWindow = closeMessageWindow;
+    }
+
+    public Rectangle getMinMessageWindow() {
+        return minMessageWindow;
+    }
+
+    public void setMinMessageWindow(final Rectangle minMessageWindow) {
+        this.minMessageWindow = minMessageWindow;
+    }
+
+    public boolean isMoveMessage() {
+        return moveMessage;
+    }
+
+    public void setMoveMessage(final boolean moveMessage) {
+        this.moveMessage = moveMessage;
+    }
+
+    public StringBuffer getMessage() {
+        return message;
+    }
+
+    public void setMessage(final StringBuffer message) {
+        this.message = message;
+    }
+
+    public StringBuffer getMessageTitle() {
+        return messageTitle;
+    }
+
+    public void setMessageTitle(final StringBuffer messageTitle) {
+        this.messageTitle = messageTitle;
+    }
+
+    public static GenericImage getMessageFrame() {
+        return messageFrame;
+    }
+
+    public void addMessage(String msg) {
+        message.append(msg);
+    }
+
+    public void addMessage(char chr) {
+        message.append(chr);
+    }
+
+    public boolean isMinimized() {
+        return minimized;
+    }
+
+    public void setMinimized(final boolean minimized) {
+        this.minimized = minimized;
+    }
+}

@@ -1,0 +1,12 @@
+LoadingGameState
+    currently, the loading game state works ok.  It is not a singleton, however, it also doesn't have
+    all of the parameters that it could for setting various loading screens
+
+    the design should be modified for a different game state for each of the set functionality that is needed
+    e.g. a text and non graphic loading bar
+         bg image
+         multiple bg images
+         Hud like loader with border and overlay
+         stretching image
+         sliding image
+         clipped image (meaning we cut off part of the image so that it doesn't display while loading)
