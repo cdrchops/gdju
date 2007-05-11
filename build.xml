@@ -1,0 +1,49 @@
+<project name="gdropLibs">
+
+    <macrodef name="iterate">
+        <attribute name="target"/>
+        <sequential>
+            <subant target="@{target}">
+                <fileset dir="src" includes="util/build/build.xml"/>
+                <fileset dir="src" includes="io/build/build.xml"/>
+                <fileset dir="src" includes="errorHandling/build/build.xml"/>
+                <fileset dir="src" includes="xml/build/build.xml"/>
+                <fileset dir="src" includes="config/build/build.xml"/>
+                <fileset dir="src" includes="logging/build/build.xml"/>
+                <fileset dir="src" includes="j2ee/build/build.xml"/>
+                <fileset dir="src" includes="jdbc/build/build.xml"/>
+                <fileset dir="src" includes="lua/build/build.xml"/>
+                <fileset dir="src" includes="groovy/build/build.xml"/>
+                <fileset dir="src" includes="messaging/build/build.xml"/>
+                <fileset dir="src" includes="serialization/build/build.xml"/>
+                <fileset dir="src" includes="gl/build/build.xml"/>
+                <fileset dir="src" includes="engine/build/build.xml"/>
+            </subant>
+        </sequential>
+    </macrodef>
+
+    <property name="classes.dir"  value="build/classes"/>
+
+    <target name="ensure.directories">
+        <mkdir dir="${classes.dir}"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="build/**"/>
+        <antcall target="ensure.directories"/>
+    </target>
+
+    <target name="compile">
+        <antcall target="ensure.directories"/>
+        <iterate target="compile"/>
+    </target>
+
+    <target name="all">
+        <antcall target="ensure.directories"/>
+        <iterate target="jar"/>
+        <iterate target="srcJar"/>
+        <iterate target="zip"/>
+    </target>
+
+    <!-- more targets -->
+</project>
