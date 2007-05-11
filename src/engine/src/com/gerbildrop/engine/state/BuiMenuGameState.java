@@ -50,7 +50,7 @@ public abstract class BuiMenuGameState extends BasicGameState implements IGameSt
         this.backdrop = _backdrop;
         initBackdrop();
 
-        BuiSystem.init(BStyleSheetUtil.getStyleSheet("/dradis/styles/styles.bss"));
+        BuiSystem.init(BStyleSheetUtil.getStyleSheetFromFile("/dradis/styles/styles.properties"));
         wantsGraphicalMouse = wantGraphicalMouse;
         buildUI();
     }
