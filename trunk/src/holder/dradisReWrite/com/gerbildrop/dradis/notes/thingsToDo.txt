@@ -1,3 +1,0 @@
-duplicated Model code and removed reference to Model so that cloning doesn't give you the same problem.
-
-DradisNodes are designed to be texture holders not Models... this will need to be fixed

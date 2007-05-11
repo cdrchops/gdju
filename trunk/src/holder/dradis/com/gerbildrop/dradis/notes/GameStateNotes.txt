@@ -1,9 +1,0 @@
-GameStates should be singletons.
-   handling all aspects of the game regarding that state
-   each state currently performs as expected, however, if you are using multiple game states
-        then the game states are reloaded each time, and if you do this too many times then the
-        game will crash b/c the game state is kept in memory, however, a new instance is created
-        when the action is called... therefore, this is a memory leak
-
-    issues: when making a gamestate a singleton, the gamestate may not update correctly if you use some
-            of the same items in that game state... e.g. my clock and my timer instances

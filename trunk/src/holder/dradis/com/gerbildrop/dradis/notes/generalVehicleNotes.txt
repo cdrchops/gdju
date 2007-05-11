@@ -1,8 +1,0 @@
-Viper
-    eject
-    covered
-    navcomp
-    warbook
-    targetting comp/dradis
-    weapon inv
-    bool isLanding ;//call the ball
