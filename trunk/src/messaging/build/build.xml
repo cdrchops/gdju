@@ -1,0 +1,4 @@
+<project name="gdrop-messaging">
+    <property name="src.includes" value="com/gerbildrop/messaging/**"/>
+    <import file="../../../common.xml"/>
+</project>

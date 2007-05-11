@@ -1,0 +1,4 @@
+<project name="gdrop-engine">
+    <property name="src.includes" value="com/gerbildrop/engine/**"/>
+    <import file="../../../common.xml"/>
+</project>

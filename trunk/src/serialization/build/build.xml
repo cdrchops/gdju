@@ -1,0 +1,4 @@
+<project name="gdrop-serialization">
+    <property name="src.includes" value="com/gerbildrop/serialization/**"/>
+    <import file="../../../common.xml"/>
+</project>

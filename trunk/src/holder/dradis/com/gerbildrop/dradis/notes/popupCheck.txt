@@ -1,0 +1,32 @@
+//        popupCheck();
+
+    //todo: make a gameobject that the result of the popups would go into
+    //      then the user could set the timer, load a map, etc... this was the test for that
+//    private void popupCheck() {
+//
+//        Runnable runner = new Runnable() {
+//            public void run() {
+//                final JFrame frame = new JFrame("Numeric Verifier");
+//                JPanel panel1 = new JPanel(new BorderLayout());
+//                JLabel label1 = new JLabel("Numeric-only");
+//                final JTextField textField1 = new JTextField();
+//                panel1.add(label1, BorderLayout.WEST);
+//                panel1.add(textField1, BorderLayout.CENTER);
+//
+//                frame.add(panel1, BorderLayout.NORTH);
+//                frame.setSize(300, 95);
+//                frame.setVisible(true);
+//                frame.addWindowListener(new WindowAdapter() {
+//                    public void windowClosing(WindowEvent e) {
+//                        if (frame != null) {
+//                            frame.setVisible(false);
+//                            frame.setEnabled(false);
+//                        }
+//                    }
+//                });
+//            }
+//        };
+//
+//        Thread t = new Thread(runner);
+//        t.start();
+//    }

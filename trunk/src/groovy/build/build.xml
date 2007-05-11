@@ -1,0 +1,4 @@
+<project name="gdrop-groovy">
+    <property name="src.includes" value="com/gerbildrop/groovy/**"/>
+    <import file="../../../common.xml"/>
+</project>

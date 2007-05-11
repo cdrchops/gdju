@@ -1,0 +1,33 @@
+import com.jme.scene.Spatial;
+import com.jme.math.Vector3f;
+
+public class LOSController{
+
+       private float predvel = 0.125f;//, preyvel = 0.003f;
+//        public PatternController pc;
+
+     public Spatial predator;
+     public Spatial prey;
+
+
+    public LOSController(Spatial predator, Spatial prey) {
+        this.predator = predator;
+        this.prey = prey;
+
+    }
+
+    public void updateCycle() {
+
+        doLineOfSightChase();
+
+        predator.updateGeometricState(1.0f,true);
+    }
+
+    private void doLineOfSightChase() {
+
+        Vector3f u = prey.getLocalTranslation().subtract(predator.getLocalTranslation()).normalize();
+        predator.lookAt(u, Vector3f.UNIT_Z);
+        predator.setLocalTranslation(predator.getLocalTranslation().add(u));
+        //predator.lookAt(u, Vector3f.UNIT_Y);
+    }
+}

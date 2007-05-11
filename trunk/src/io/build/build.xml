@@ -1,0 +1,4 @@
+<project name="gdrop-io">
+    <property name="src.includes" value="com/gerbildrop/io/**"/>
+    <import file="../../../common.xml"/>
+</project>
