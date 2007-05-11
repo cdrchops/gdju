@@ -1,9 +1,0 @@
-#summary Examples of Custom MessageBoxes
-
-These examples are simply showing the message box design, tiled message boxes with this design and collapsed message boxes with the same design
-
-[http://gerbildrop.com/downloads/Custom1.png]
-
-[http://gerbildrop.com/downloads/customTiled1.png]
-
-[http://gerbildrop.com/downloads/customTiled2.png]
