@@ -1,1 +1,0 @@
-println "inside the script"
