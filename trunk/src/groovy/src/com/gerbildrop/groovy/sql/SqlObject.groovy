@@ -1,4 +1,4 @@
-package com.gerbildrop.hiero;
+package com.gerbildrop.groovy.sql;
 
 import groovy.sql.Sql;
 

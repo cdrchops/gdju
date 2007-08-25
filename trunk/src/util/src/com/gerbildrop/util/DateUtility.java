@@ -58,7 +58,7 @@ public final class DateUtility {
 
     public static final int[] MONTHS_INT = new int[]{JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
     public static final String[] MONTHS_STR = new String[]{"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG",
-                                                          "SEP", "OCT", "NOV", "DEC"};
+                                                           "SEP", "OCT", "NOV", "DEC"};
 
     public static String lookupMonthStr(int month) {
         return (month < 0 || month > MONTHS_STR.length) ? null : MONTHS_STR[month];
