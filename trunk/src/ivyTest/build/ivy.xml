@@ -1,0 +1,20 @@
+<ivy-module version="1.0">
+    <info organisation="kaleut" module="hello-ivy" />
+    <dependencies>
+        <dependency org="apache" name="commons-beanutils" rev="latest.integration" />
+        <dependency org="apache" name="commons-cli" rev="latest.integration" />
+        <dependency org="apache" name="commons-codec" rev="latest.integration" />
+        <dependency org="apache" name="commons-collections" rev="latest.integration" />
+        <dependency org="apache" name="commons-dbcp" rev="latest.integration" />
+        <dependency org="apache" name="commons-el" rev="latest.integration" />
+        <dependency org="apache" name="commons-fileupload" rev="latest.integration" />
+        <dependency org="apache" name="commons-httpclient" rev="latest.integration" />
+        <dependency org="apache" name="commons-io" rev="latest.integration" />
+        <dependency org="apache" name="commons-lang" rev="latest.integration" />
+        <dependency org="apache" name="commons-logging" rev="latest.integration" />
+        <dependency org="apache" name="commons-pool" rev="latest.integration" />
+        <dependency org="apache" name="commons-validator" rev="latest.integration" />
+        <!--<dependency org="apache" name="commons-vfs" rev="latest.integration" />-->
+        <dependency org=""
+    </dependencies>
+</ivy-module>
