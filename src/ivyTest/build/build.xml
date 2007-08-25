@@ -1,0 +1,12 @@
+<project xmlns:ivy="antlib:fr.jayasoft.ivy.ant" name="hello-ivy" default="resolve">
+    <!-- =================================
+          target: resolve
+         ================================= -->
+    <target name="resolve" description="">
+        <echo message="done"/>
+        <path id="ivy.lib.path">
+            <fileset dir="." includes="*.jar"/>
+        </path>
+        <ivy:retrieve />
+    </target>
+</project>
