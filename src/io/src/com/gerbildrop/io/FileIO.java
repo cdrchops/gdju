@@ -46,9 +46,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileIO {
-    public static List readFile(String path, String fileName, boolean addBreaks) {
-        List readFile = new ArrayList();
-        BufferedReader in = null;
+    public static List<String> readFile(String path, String fileName, boolean addBreaks) {
+        List<String> readFile = new ArrayList<String>();
+        BufferedReader in;
         try {
             in = new BufferedReader(new FileReader(path + fileName));
             for (String inner = in.readLine(); inner != null; inner = in.readLine()) {
@@ -65,7 +65,7 @@ public class FileIO {
     }
 
     public static void appendFile(String filePath, String fileName, String extension, String content) {
-        List lst = FileIO.readFile(filePath, fileName + extension, false);
+        List<String> lst = FileIO.readFile(filePath, fileName + extension, false);
         lst.add(content);
 
         writeFile(filePath, fileName + extension, lst);
@@ -75,9 +75,8 @@ public class FileIO {
         try {
             File file = new File(filePath + fileName);
             FileOutputStream fout = new FileOutputStream(file);
-            for (int i = 0; i < content.size(); i++) {
-                String c = (String) content.get(i) + "\r";
-                //System.out.println("c: " + c);
+            for (Object aContent : content) {
+                String c = aContent + "\r";
                 fout.write(c.getBytes());
             }
 
@@ -102,7 +101,6 @@ public class FileIO {
             fout.close();
         } catch (IOException e) {
             e.printStackTrace();
-//            Debug.error(e);
         }
     }
 
@@ -117,7 +115,7 @@ public class FileIO {
             sb.append("<b>").append(fileName).append("</b><br>");
         }
 
-        BufferedReader in = null;
+        BufferedReader in;
 
         try {
             in = new BufferedReader(new FileReader(filePath + fileName));
@@ -149,10 +147,10 @@ public class FileIO {
      *
      * @return formatted script
      */
-    public static List readFileIn(String filePath, String fileName) {
-        BufferedReader in = null;
+    public static List<String> readFileIn(String filePath, String fileName) {
+        BufferedReader in;
 
-        List lst = new ArrayList();
+        List<String> lst = new ArrayList<String>();
         try {
             in = new BufferedReader(new FileReader(filePath + fileName));
 
@@ -167,19 +165,19 @@ public class FileIO {
         return lst;
     }
 
-    public static List getFileFromServerAsList(String url) {
-        List list = new ArrayList();
+    public static List<String> getFileFromServerAsList(String url) {
+        List<String> list = new ArrayList<String>();
 
-        URL localUrl = null;
+        URL localUrl;
 
         try {
             localUrl = new URL(url);
 
-            BufferedReader localReader = null;
+            BufferedReader localReader;
 
             localReader = new BufferedReader(new InputStreamReader(localUrl.openStream()));
 
-            String localInputLine = null;
+            String localInputLine;
 
             while ((localInputLine = localReader.readLine()) != null) {
                 list.add(localInputLine);
@@ -212,8 +210,8 @@ public class FileIO {
         return getFileList(pathName, new String[]{"jpg", "JPG", "gif", "GIF"});
     }
 
-    public static List getFileList(String pathName, String[] extensionList) {
-        List lst = new ArrayList();
+    public static List<String> getFileList(String pathName, String[] extensionList) {
+        List<String> lst = new ArrayList<String>();
 
         File dir = new File(pathName);
 
@@ -227,8 +225,7 @@ public class FileIO {
 
         String[] children = dir.list(filter);
 
-        for (int i = 0; i < children.length; i++) {
-            String child = children[i];
+        for (String child : children) {
             if (checkExt(extensionList, child)) {
                 lst.add(child);
             }
@@ -240,8 +237,7 @@ public class FileIO {
     public static boolean checkExt(String[] extensionList, String strToCheck) {
         boolean returner = false;
 
-        for (int i = 0; i < extensionList.length; i++) {
-            String s = extensionList[i];
+        for (String s : extensionList) {
             if (strToCheck.indexOf(s) > -1) {
                 returner = true;
                 break;
@@ -252,7 +248,7 @@ public class FileIO {
     }
 
     public static void writeToFileAppend(String pathName, String fileName, String append) {
-        List lst = FileIO.readFile(pathName, fileName, false);
+        List<String> lst = FileIO.readFile(pathName, fileName, false);
         lst.add(append);
         FileIO.writeFile(pathName, fileName, lst);
     }

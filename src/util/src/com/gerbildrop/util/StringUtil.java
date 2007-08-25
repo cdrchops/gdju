@@ -90,9 +90,9 @@ public class StringUtil {
         StringTokenizer tokens = new StringTokenizer(string, delimiter);
 
         while (tokens.hasMoreTokens()) {
-            appendTo.add(tokens.nextToken());
+            appendTo.add(tokens.nextToken().trim());
             if (bln) {
-                //appendTo.add("\n");
+                appendTo.add("\n");
             }
         }
     }
@@ -317,6 +317,6 @@ public class StringUtil {
     }
 
     public static String setTernary(String str, String defaultValue) {
-        return StringUtil.hasLen(str) ? str : defaultValue;        
+        return StringUtil.hasLen(str) ? str : defaultValue;
     }
 }

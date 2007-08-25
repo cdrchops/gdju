@@ -8,9 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public abstract class MasterController extends HttpServlet {
-    public abstract void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processServlet(request, response);
+	}
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            doGet(request, response);
+    	processServlet(request, response);
     }
+
+    public abstract void processServlet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 }

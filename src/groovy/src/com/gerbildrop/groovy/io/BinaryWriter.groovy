@@ -30,7 +30,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.gerbildrop.dradis.groovy.io;
+package com.gerbildrop.groovy.io;
 /**
  * @author vivaldi
  * @version $Id: BinaryWriter.groovy,v 1.2 2007/04/26 17:35:26 vivaldi Exp $
