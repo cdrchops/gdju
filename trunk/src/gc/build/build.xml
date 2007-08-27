@@ -1,4 +1,4 @@
-<project name="dradis">
-    <property name="src.includes" value="com/gerbildrop/dradis/**"/>
+<project name="gdrop-gc">
+    <property name="src.includes" value="com/gerbildrop/gc/**"/>
     <import file="../../../common.xml"/>
 </project>
