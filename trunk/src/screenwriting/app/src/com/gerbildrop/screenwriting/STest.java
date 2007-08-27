@@ -38,7 +38,7 @@
 
 package com.gerbildrop.screenwriting;
 
-import com.gerbildrop.logging.Debug;
+import com.gerbildrop.io.FileIO;
 
 public class STest {
     public static void main(String[] args) {
@@ -46,10 +46,7 @@ public class STest {
     }
 
     public STest() {
-//        String returner = SitcomFormatter.readFileFromList(FileIO.readFileIn("c:/projectos/files/config/", "Pilot.txt"));
-//        System.out.println(returner);
-        Debug.debug("BOB");
-        Debug.debug("allen");
-        Debug.debug("john");
+        String returner = SitcomFormatter.readFileFromList(FileIO.readFileIn("c:/projectos/files/config/", "Pilot.txt"));
+        System.out.println(returner);
     }
 }

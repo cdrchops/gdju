@@ -77,21 +77,21 @@ public class SitcomFormatter {
     /**
      * DIRECTIONALS
      */
-    private static List directionalList = new ArrayList();
-    private static List fadesList = new ArrayList();
-    private static List cutsList = new ArrayList();
-    private static List montageList = new ArrayList();
-    private static List locationsList = new ArrayList();
-    private static List customExclusionsList = new ArrayList();
-    private static List actSceneList = new ArrayList();
+    private static List<String> directionalList = new ArrayList<String>();
+    private static List<String> fadesList = new ArrayList<String>();
+    private static List<String> cutsList = new ArrayList<String>();
+    private static List<String> montageList = new ArrayList<String>();
+    private static List<String> locationsList = new ArrayList<String>();
+    private static List<String> customExclusionsList = new ArrayList<String>();
+    private static List<String> actSceneList = new ArrayList<String>();
 
     /**
      * custom variables reset everytime by the application
      */
-    private List charactersList = new ArrayList();
-    private List customCutsList = new ArrayList();
-    private List customDirectionalList = new ArrayList();
-    private List customFadesList = new ArrayList();
+    private List<String> charactersList = new ArrayList<String>();
+    private List<String> customCutsList = new ArrayList<String>();
+    private List<String> customDirectionalList = new ArrayList<String>();
+    private List<String> customFadesList = new ArrayList<String>();
 
     static {
         directionalList.add("V.O.");
@@ -150,7 +150,7 @@ public class SitcomFormatter {
     private boolean isMontage = false;
     private char seriesOfShotsNumber = 'a';
     private boolean isDualDialog = false;
-    private List dualDialog = new ArrayList();
+    private List<String> dualDialog = new ArrayList<String>();
 
     public static String readFileFromList(List lst) {
         int i = 0;
@@ -209,7 +209,7 @@ public class SitcomFormatter {
     /**
      * the bulk of the formatting checks are done here format each line according to what type of item it is
      *
-     * @param toFormat
+     * @param toFormat String to format
      *
      * @return formatted line
      */
@@ -335,7 +335,7 @@ public class SitcomFormatter {
     /**
      * run through a series of line checks to determine exactly which type of item we want to format this line for
      *
-     * @param toFormat
+     * @param toFormat String to format
      *
      * @return a constant variable related to the type of item we are going to format this with
      */
@@ -372,10 +372,10 @@ public class SitcomFormatter {
     /**
      * loops through list to pull out information
      *
-     * @param toFormat
-     * @param lister
+     * @param toFormat String to format
+     * @param lister List stuff
      *
-     * @return
+     * @return boolean true or false
      */
     private boolean checker(String toFormat, List lister) {
         boolean returner = false;
@@ -398,7 +398,7 @@ public class SitcomFormatter {
      * does this line contain any predefined CUTS or any custom CUTS predefined cuts are from {@link
      * SitcomFormatter#cutsList}
      *
-     * @param toFormat
+     * @param toFormat String to format
      *
      * @return true if this contains either predefined CUTS or custom CUTS
      */
@@ -410,7 +410,7 @@ public class SitcomFormatter {
      * does this line contain any predefined FADES or any custom FADES predefined FADES are from {@link
      * SitcomFormatter#fadesList}
      *
-     * @param toFormat
+     * @param toFormat String to Format
      *
      * @return true if this contains either predefined FADES or custom FADES
      */
@@ -431,7 +431,7 @@ public class SitcomFormatter {
     /**
      * determines if the line contains INT. or EXT.
      *
-     * @param toFormat
+     * @param toFormat String to Format
      *
      * @return true if this contains INT. or EXT.
      */
@@ -440,7 +440,7 @@ public class SitcomFormatter {
     }
 
     /**
-     * @param toFormat
+     * @param toFormat String to Format
      *
      * @return true if this contains ( or )
      */
@@ -468,7 +468,7 @@ public class SitcomFormatter {
      * does this line contain any predefined CHARACTERS or any custom CHARACTERS predefined CHARACTERS are from {@link
      * SitcomFormatter#charactersList}
      *
-     * @param toFormat
+     * @param toFormat String to Format
      *
      * @return true if this contains either predefined CHARACTERS or custom CHARACTERS
      */
@@ -478,7 +478,7 @@ public class SitcomFormatter {
         final int size = charactersList.size();
 
         for (int i = 0; i < size; i++) {
-            String _character = (String) charactersList.get(i);
+            String _character = charactersList.get(i);
 
             if ((StringUtil.isEqual(toFormat, _character)
                     || (StringUtil.indexOf(toFormat, _character)
@@ -497,7 +497,7 @@ public class SitcomFormatter {
      * does this line contain any predefined DIRECTIONAL or any custom DIRECTIONAL predefined DIRECTIONAL are from
      * {@link SitcomFormatter#directionalList} custom DIRECTIONAL are from {@link SitcomFormatter#directionalList}
      *
-     * @param toFormat
+     * @param toFormat String to Format
      *
      * @return true if this contains either predefined DIRECTIONAL or custom DIRECTIONAL
      */
@@ -517,7 +517,7 @@ public class SitcomFormatter {
     /**
      * determines if the line contains the text DUAL DIALOG to let us handle dual dialog in the script
      *
-     * @param toFormat
+     * @param toFormat String to Format
      *
      * @return true if this contains the text DUAL DIALOG
      */
@@ -536,7 +536,7 @@ public class SitcomFormatter {
      * does this line contain any predefined MONTAGE listings predefined MONTAGE listings are from {@link
      * SitcomFormatter#montageList}
      *
-     * @param toFormat
+     * @param toFormat String to Format
      *
      * @return true if this contains either predefined MONTAGE listings
      */
@@ -559,7 +559,7 @@ public class SitcomFormatter {
     /**
      * ensure that the line isn't blank
      *
-     * @param toFormat
+     * @param toFormat String to Format
      *
      * @return true if the line is blank
      */
@@ -576,7 +576,7 @@ public class SitcomFormatter {
     private String formatDualDialog() {
         StringBuffer sb = new StringBuffer();
 
-        String dialogs[] = (String[]) dualDialog.toArray(new String[dualDialog.size()]);
+        String dialogs[] = dualDialog.toArray(new String[dualDialog.size()]);
         sb.append("<table border=\"0\">");
         sb.append("    <tr valign=\"top\">");
         sb.append("        <td>");
@@ -586,8 +586,8 @@ public class SitcomFormatter {
 
         int j = 0;
 
-        for (int i = 0; i < dialogs.length; i++) {
-            StringTokenizer tokens = new StringTokenizer(dialogs[i], "|");
+        for (String dialog : dialogs) {
+            StringTokenizer tokens = new StringTokenizer(dialog, "|");
 
             while (tokens.hasMoreTokens()) {
                 String token = tokens.nextToken().trim();
@@ -647,7 +647,7 @@ public class SitcomFormatter {
     /**
      * format the montage lines according to predefined standards {@link SitcomFormatter#montageList}
      *
-     * @param toFormat
+     * @param toFormat String to Format
      *
      * @return formatted montage lines
      */
@@ -674,8 +674,8 @@ public class SitcomFormatter {
      * generic pass through.  Send in a style and the text to go between the paragraph &lt;p&gt; tags and it will insert
      * the format you've requested
      *
-     * @param style
-     * @param insert
+     * @param style String style of class
+     * @param insert String insert value
      *
      * @return formatted line
      */
@@ -702,7 +702,7 @@ public class SitcomFormatter {
      * custom exclusions are items that are used for reference, but we don't want them to be considered when deciding on
      * formatting
      *
-     * @param toFormat
+     * @param toFormat String to Format
      *
      * @return true if exclusions are included in the string
      */
@@ -714,7 +714,7 @@ public class SitcomFormatter {
         final int size = customExclusionsList.size();
 
         for (int i = 0; i < size; i++) {
-            String customExclusion = (String) customExclusionsList.get(i);
+            String customExclusion = customExclusionsList.get(i);
 
             if (StringUtil.indexOf(toFormat, customExclusion)) {
                 returner = true;
