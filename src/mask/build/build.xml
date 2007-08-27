@@ -1,4 +1,4 @@
-<project name="dradis">
-    <property name="src.includes" value="com/gerbildrop/dradis/**"/>
+<project name="mask">
+    <property name="src.includes" value="com/gerbildrop/mask/**"/>
     <import file="../../../common.xml"/>
 </project>

@@ -1,5 +1,5 @@
 <project>
-    <property name="src.dir"      value="../src"/>
+    <property name="src.dir"      value="../app/src"/>
     <property name="build.dir"    value="../../../build"/>
     <property name="classes.dir"  value="../../../build/classes"/>
     <property name="lib.dir"  value="../../../libs"/>
