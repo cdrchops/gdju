@@ -1,0 +1,4 @@
+<project name="screenwriting">
+    <property name="src.includes" value="com/gerbildrop/screenwriting/**"/>
+    <import file="../../../common.xml"/>
+</project>
