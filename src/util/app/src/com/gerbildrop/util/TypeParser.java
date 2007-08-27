@@ -1,12 +1,25 @@
 package com.gerbildrop.util;
 
+/**
+ *
+ */
 public class TypeParser {
+    /**
+     *
+     * @param str String to parse as a boolean value
+     * @return boolean default value is false
+     */
     public static boolean parseBoolean(String str) {
         return TypeParser.parseBoolean(str, false);
     }
 
+    /**
+     *
+     * @param str String to parse as a boolean value
+     * @param defaultValue boolean default value that if the parsing fails this value will be returned
+     * @return boolean value of our parsing algorithm
+     */
     public static boolean parseBoolean(String str, boolean defaultValue) {
-
         boolean returnValue;
 
         if (StringUtil.hasLen(str)) {
