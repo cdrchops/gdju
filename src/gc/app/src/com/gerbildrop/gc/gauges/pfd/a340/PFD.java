@@ -4,7 +4,7 @@ import javax.media.opengl.GL;
 import javax.media.opengl.GLAutoDrawable;
 
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
-import com.gerbildrop.gl.GLUtil;
+import com.gerbildrop.gc.util.GLUtil;
 
 public class PFD extends BaseGauge {
     public PFD() {

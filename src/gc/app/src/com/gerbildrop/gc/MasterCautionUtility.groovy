@@ -6,7 +6,7 @@ public class MasterCautionUtility {
     public static final String YELLOW = 'YELLOW';
     public static final String RED = 'RED';
 
-    public static def checkFuelLevel = {lefty, fuelLowy->
+    public static def checkFuelLevel = {lefty, fuelLowy ->
         if (lefty.fuelLevel <= 172.5) {
             fuelLowy.displayColor = YELLOW
         } else {

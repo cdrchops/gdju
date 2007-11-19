@@ -5,7 +5,7 @@ import javax.media.opengl.GLAutoDrawable;
 
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
-import com.gerbildrop.gl.util.CircleEvaluator;
+import com.gerbildrop.gc.util.CircleEvaluator;
 
 public class NdRoseVor extends BaseGauge {
     public NdRoseVor() {
@@ -49,7 +49,7 @@ public class NdRoseVor extends BaseGauge {
         gl.glVertex2f(0.000f, -0.350f);
         gl.glEnd();
 
-        CircleEvaluator ce = new CircleEvaluator();
+        CircleEvaluator ce = new CircleEvaluator(gl);
         for (int i = -2; i < 3; ++i) {
             ce.setOrigin(i * 0.0895, 0);
             ce.setRadius(0.007);

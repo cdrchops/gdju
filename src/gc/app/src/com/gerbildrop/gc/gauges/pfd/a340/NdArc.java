@@ -5,8 +5,8 @@ import javax.media.opengl.GLAutoDrawable;
 
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
-import com.gerbildrop.gl.symbol.AircraftSymbol;
-import com.gerbildrop.gl.util.CircleEvaluator;
+import com.gerbildrop.gc.symbol.AircraftSymbol;
+import com.gerbildrop.gc.util.CircleEvaluator;
 
 public class NdArc extends BaseGauge {
     public NdArc() {
@@ -84,7 +84,7 @@ public class NdArc extends BaseGauge {
             gl.glRotated(-10.0, 0, 0, 1.0);
         }
         gl.glPopMatrix();
-        CircleEvaluator ce = new CircleEvaluator();
+        CircleEvaluator ce = new CircleEvaluator(gl);
 
         // Draw the range arcs
         gl.glColor3ubv(CLWhite);

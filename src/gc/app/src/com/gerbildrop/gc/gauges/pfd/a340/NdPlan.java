@@ -5,8 +5,8 @@ import javax.media.opengl.GLAutoDrawable;
 
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
-import com.gerbildrop.gl.symbol.AircraftSymbol;
-import com.gerbildrop.gl.util.CircleEvaluator;
+import com.gerbildrop.gc.symbol.AircraftSymbol;
+import com.gerbildrop.gc.util.CircleEvaluator;
 
 public class NdPlan extends BaseGauge {
     public NdPlan() {
@@ -52,7 +52,7 @@ public class NdPlan extends BaseGauge {
 //            m_GLEnv->font()->print(0.025f, 0.850f, 0.05f, 0.05f, false, "--- --");
             Font.display(glAutoDrawable, 0.025f, 0.850f, "--- --");
 
-        CircleEvaluator ce = new CircleEvaluator();
+        CircleEvaluator ce = new CircleEvaluator(gl);
         // Draw the range indicators
         gl.glColor3ubv(CLWhite);
 //        m_GLEnv->font()->print(0.360f, 0.335f, 0.05f, 0.05f, false, "80");

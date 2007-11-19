@@ -1,11 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd.opengc;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
-import com.gerbildrop.gl.util.CircleEvaluator;
+import com.gerbildrop.gc.util.CircleEvaluator;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GLAutoDrawable;
 
 public class HeadingIndicator extends BaseGauge {
     public HeadingIndicator() {
@@ -42,7 +42,7 @@ public class HeadingIndicator extends BaseGauge {
         gl.glLineWidth(1.5f);
 
         // Set up the circle
-        CircleEvaluator aCircle = new CircleEvaluator();
+        CircleEvaluator aCircle = new CircleEvaluator(gl);
         aCircle.setRadius(radius);
         aCircle.setArcStartEnd(300, 60);
         aCircle.setDegreesPerPoint(5);

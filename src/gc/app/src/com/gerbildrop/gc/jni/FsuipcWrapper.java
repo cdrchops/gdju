@@ -36,10 +36,10 @@ public class FsuipcWrapper {
     /** close the connection */
     public static synchronized native void close();
 
-    /** Read bytes from FS */
+    /* Read bytes from FS */
     public static synchronized native void readData(int aOffset, int aCount, byte[] aData);
 
-    /** Write byte to FS */
+    /* Write byte to FS */
     public static synchronized native void writeData(int aOffset, int aCount, byte[] aData);
 
     /** process the commands */
