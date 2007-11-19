@@ -12,24 +12,24 @@ public final class NotCollidable extends HashSet<String> {
     private NotCollidable() {}
 
     static {
-        getInstance().add("bullet");
-        getInstance().add("skyNode");
-        getInstance().add("TDS Scene");
-        getInstance().add("Camera Node");
-        getInstance().add("viper Hoff");
-        getInstance().add("camNode");
-        getInstance().add("worldNode");
-        getInstance().add("Particle Nodes");
-        getInstance().add("up");
-        getInstance().add("down");
-        getInstance().add("north");
-        getInstance().add("south");
-        getInstance().add("east");
-        getInstance().add("west");
-        getInstance().add("skybox");
-        getInstance().add("ExplosionEffect");
-        getInstance().add("Particle Nodes");
-        getInstance().add(": RootNode");
-        getInstance().add("rootNode");
+        _INSTANCE.add("bullet");
+        _INSTANCE.add("skyNode");
+        _INSTANCE.add("TDS Scene");
+        _INSTANCE.add("Camera Node");
+        _INSTANCE.add("viper Hoff");
+        _INSTANCE.add("camNode");
+        _INSTANCE.add("worldNode");
+        _INSTANCE.add("Particle Nodes");
+        _INSTANCE.add("up");
+        _INSTANCE.add("down");
+        _INSTANCE.add("north");
+        _INSTANCE.add("south");
+        _INSTANCE.add("east");
+        _INSTANCE.add("west");
+        _INSTANCE.add("skybox");
+        _INSTANCE.add("ExplosionEffect");
+        _INSTANCE.add("Particle Nodes");
+        _INSTANCE.add(": RootNode");
+        _INSTANCE.add("rootNode");
     }
 }
