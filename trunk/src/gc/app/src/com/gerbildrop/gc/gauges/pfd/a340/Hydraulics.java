@@ -1,10 +1,10 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
+import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+import com.gerbildrop.gc.util.CircleEvaluator;
+
 import javax.media.opengl.GL;
 import javax.media.opengl.GLAutoDrawable;
-
-import com.gerbildrop.gc.gauges.pfd.BaseGauge;
-import com.gerbildrop.gl.util.CircleEvaluator;
 
 public class Hydraulics extends BaseGauge {
     public Hydraulics() {
@@ -248,7 +248,7 @@ public class Hydraulics extends BaseGauge {
         gl.glVertex3f(0.000f, 0.079f, 0);
         gl.glVertex3f(0.000f, 0.111f, 0);
         gl.glEnd();
-        CircleEvaluator ce = new CircleEvaluator();
+        CircleEvaluator ce = new CircleEvaluator(gl);
         ce.setOrigin(0.000, 0.056);
         ce.setRadius(0.024);
         ce.setDegreesPerPoint(18);

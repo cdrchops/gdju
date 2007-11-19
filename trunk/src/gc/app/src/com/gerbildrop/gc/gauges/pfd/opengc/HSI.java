@@ -5,7 +5,7 @@ import javax.media.opengl.GLAutoDrawable;
 
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
-import com.gerbildrop.gl.util.CircleEvaluator;
+import com.gerbildrop.gc.util.CircleEvaluator;
 
 public class HSI extends BaseGauge {
     public HSI() {
@@ -16,7 +16,7 @@ public class HSI extends BaseGauge {
         super.display(glAutoDrawable);
 
         // For drawing circles
-        CircleEvaluator aCircle = new CircleEvaluator();
+        CircleEvaluator aCircle = new CircleEvaluator(gl);
 
         // First, store the "root" position of the gauge component
         gl.glMatrixMode(GL.GL_MODELVIEW);

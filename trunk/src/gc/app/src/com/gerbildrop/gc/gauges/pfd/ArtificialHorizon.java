@@ -1,9 +1,9 @@
 package com.gerbildrop.gc.gauges.pfd;
 
+import com.gerbildrop.gc.util.GLUtil;
+
 import javax.media.opengl.GL;
 import javax.media.opengl.GLAutoDrawable;
-
-import com.gerbildrop.gl.GLUtil;
 
 public class ArtificialHorizon extends BaseGauge {
     public ArtificialHorizon() {

@@ -5,8 +5,8 @@ import javax.media.opengl.GLAutoDrawable;
 
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
-import com.gerbildrop.gl.symbol.AircraftSymbol;
-import com.gerbildrop.gl.util.CircleEvaluator;
+import com.gerbildrop.gc.symbol.AircraftSymbol;
+import com.gerbildrop.gc.util.CircleEvaluator;
 import com.gerbildrop.util.StringUtil;
 
 public class NdRose extends BaseGauge {
@@ -73,7 +73,7 @@ public class NdRose extends BaseGauge {
         }
 
         // Paint the outer scale
-        CircleEvaluator ce = new CircleEvaluator();
+        CircleEvaluator ce = new CircleEvaluator(gl);
         ce.setOrigin(0.480, 0.467);
         ce.setRadius(0.350);
         ce.setDegreesPerPoint(36);

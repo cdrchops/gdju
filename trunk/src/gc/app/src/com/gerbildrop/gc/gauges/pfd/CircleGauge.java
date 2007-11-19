@@ -1,10 +1,10 @@
 package com.gerbildrop.gc.gauges.pfd;
 
+import com.gerbildrop.gc.fonts.Font;
+import com.gerbildrop.gc.util.CircleEvaluator;
+
 import javax.media.opengl.GL;
 import javax.media.opengl.GLAutoDrawable;
-
-import com.gerbildrop.gc.fonts.Font;
-import com.gerbildrop.gl.util.CircleEvaluator;
 
 public class CircleGauge extends BaseGauge {
     public CircleGauge() {
@@ -24,7 +24,7 @@ public class CircleGauge extends BaseGauge {
         gl.glLineWidth(1.5f);
 
         // Set up the circle
-        CircleEvaluator aCircle = new CircleEvaluator();
+        CircleEvaluator aCircle = new CircleEvaluator(gl);
         aCircle.setOrigin(47, 49);
         aCircle.setRadius(radius);
         aCircle.setDegreesPerPoint(5);
