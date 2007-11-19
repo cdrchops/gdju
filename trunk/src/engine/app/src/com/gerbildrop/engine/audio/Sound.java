@@ -6,8 +6,7 @@ public class Sound {
     private int snode;
     private int sound;
 
-    public Sound() {
-    }
+    public Sound() {}
 
     public int getBoundEvent() {
         return boundEvent;
