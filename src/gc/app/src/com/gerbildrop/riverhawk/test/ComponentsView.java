@@ -8,6 +8,7 @@ import com.gerbildrop.riverhawk.base.JoglView;
 import com.gerbildrop.riverhawk.gc.jogl.ArtificialHorizon;
 import com.gerbildrop.riverhawk.gc.jogl.CircleGauge;
 import com.gerbildrop.riverhawk.gc.jogl.Fctl;
+import com.gerbildrop.riverhawk.gc.jogl.HMFD;
 
 /**
  * @author torr
@@ -18,11 +19,13 @@ public class ComponentsView extends JoglView {
     ArtificialHorizon ah = new ArtificialHorizon();
     CircleGauge cg = new CircleGauge();
     Fctl fctl = new Fctl();
+    HMFD hmfd = new HMFD();
 
     public void display() {
 //        r.draw();
 
-        fctl.draw();
+        hmfd.draw();
+//        fctl.draw();
 //        ah.draw();
 //        cg.draw();
     }
@@ -37,7 +40,10 @@ public class ComponentsView extends JoglView {
 //        cg.setTranslation(100, 100);
 //        cg.setDimension(180, 180);
 
-        fctl.setTranslation(100, 100);
-        fctl.setDimension(1000, 1000);
+//        fctl.setTranslation(100, 100);
+//        fctl.setDimension(1000, 1000);
+
+        hmfd.setTranslation(10, 10);
+        hmfd.setDimension(1000, 1000);
     }
 }
