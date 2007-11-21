@@ -58,15 +58,15 @@ public class PFD extends BaseComponent {
         boolean bAvail = attitudeAvailable;//diom_getValueBoolean(vAttitudeAvail);
 
         if (bAvail) {
-            double fPitch = Pitch;
-            double fRoll = Roll;
+            final double fPitch = Pitch;
+            final double fRoll = Roll;
 
             gl.glPushMatrix();
             gl.glTranslatef(0.463f, 0.494f, 0.0f);
             gl.glRotated(fRoll, 0, 0, -1);
             gl.glTranslatef(-0.463f, -0.494f, 0.0f);
             gl.glPushMatrix();
-            double fTranslation = transformPitch(fPitch / 10) * 0.110;
+            final double fTranslation = transformPitch(fPitch / 10) * 0.110;
             gl.glTranslated(0, fTranslation, 0);
             gl.glColor3ub((byte) 0, (byte) 130, (byte) 255);
             gl.glBegin(GL.GL_TRIANGLE_STRIP);
