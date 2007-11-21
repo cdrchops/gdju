@@ -14,24 +14,31 @@ public class PitchTrim {
 
     public void display() {
         GL gl = Configuration.getGL();
-        boolean bJam = m_vJam;
-        double fAngle = m_vAngle;
-        boolean bLowBlue = m_vLowBlue;
-        boolean bLowYellow = m_vLowYellow;
+//        boolean bJam = ;
+//        double fAngle = m_vAngle;
+//        boolean bLowBlue = m_vLowBlue;
+//        boolean bLowYellow = m_vLowYellow;
 
         // Pitch trim
-        if (bJam) gl.glColor3ubv(BaseComponent.CLAmber);
-        else gl.glColor3ubv(BaseComponent.CLWhite);
+        if (m_vJam) {
+            gl.glColor3ubv(BaseComponent.CLAmber);
+        } else {
+            gl.glColor3ubv(BaseComponent.CLWhite);
+        }
+
         Font.display(0.324f, 0.494f, "PITCH TRIM");
+        if (m_vLowBlue && m_vLowYellow) {
+            gl.glColor3ubv(BaseComponent.CLAmber);
+        } else {
+            gl.glColor3ubv(BaseComponent.CLGreen);
+        }
 
-
-        if (bLowBlue && bLowYellow) gl.glColor3ubv(BaseComponent.CLAmber);
-        else gl.glColor3ubv(BaseComponent.CLGreen);
-        Font.display(0.409f, 0.447f, Math.abs(fAngle) + "\220");
-        if (fAngle < 0.0)
+        Font.display(0.409f, 0.447f, Math.abs(m_vAngle) + "\220");
+        if (m_vAngle < 0.0) {
             Font.display(0.509f, 0.447f, "DOWN");
-        else
+        } else {
             Font.display(0.509f, 0.447f, " UP ");
+        }
 
         gl.glColor3ubv(BaseComponent.CLGrey);
         gl.glBegin(GL.GL_QUADS);
@@ -40,11 +47,20 @@ public class PitchTrim {
         gl.glVertex3f(0.676f, 0.544f, 0);
         gl.glVertex3f(0.626f, 0.544f, 0);
         gl.glEnd();
-        if (bLowBlue) gl.glColor3ubv(BaseComponent.CLAmber);
-        else gl.glColor3ubv(BaseComponent.CLGreen);
+
+        if (m_vLowBlue) {
+            gl.glColor3ubv(BaseComponent.CLAmber);
+        } else {
+            gl.glColor3ubv(BaseComponent.CLGreen);
+        }
+
         Font.display(0.626f, 0.494f, "B");
-        if (bLowYellow) gl.glColor3ubv(BaseComponent.CLAmber);
-        else gl.glColor3ubv(BaseComponent.CLGreen);
+        if (m_vLowYellow) {
+            gl.glColor3ubv(BaseComponent.CLAmber);
+        } else {
+            gl.glColor3ubv(BaseComponent.CLGreen);
+        }
+
         Font.display(0.651f, 0.494f, "Y");
     }
 }

@@ -13,10 +13,6 @@ public class SpeedBrake {
 
     public void display() {
         GL gl = Configuration.getGL();
-//        super.display(glAutoDrawable);
-        boolean bGreen = m_vLowGreen;
-        boolean bBlue = m_vLowBlue;
-        boolean bYellow = m_vLowYellow;
 
         /* Paint the Speed Brake label */
         gl.glColor3ubv(BaseComponent.CLWhite);
@@ -24,11 +20,11 @@ public class SpeedBrake {
         Font.display(0.410f, 0.755f, "SPD BRK");
 
         /* Paint the speedbrake indication */
-        paintSpeedbrakeIndication(bGreen, bBlue, bYellow);
+        paintSpeedbrakeIndication();
     }
 
 
-    void paintSpeedbrakeIndication(boolean bLowGreenHyd, boolean bLowBlueHyd, boolean bLowYellowHyd) {
+    void paintSpeedbrakeIndication() {
         GL gl = Configuration.getGL();
         /* Paint the speedbrake indication */
         // Paint the grey box behind the indication
@@ -41,20 +37,30 @@ public class SpeedBrake {
         gl.glEnd();
 
         // Paint the speedbrake green hydrolic indicator
-        if (bLowGreenHyd) gl.glColor3ubv(BaseComponent.CLAmber);
-        else gl.glColor3ubv(BaseComponent.CLGreen);
+        if (m_vLowGreen) {
+            gl.glColor3ubv(BaseComponent.CLAmber);
+        } else {
+            gl.glColor3ubv(BaseComponent.CLGreen);
+        }
+
         Font.display(0.461f, 0.899f, "G");
 
         // Paint the speedbrake blue hydrolic indicator
-        if (bLowBlueHyd) gl.glColor3ubv(BaseComponent.CLAmber);
-        else gl.glColor3ubv(BaseComponent.CLGreen);
+        if (m_vLowBlue) {
+            gl.glColor3ubv(BaseComponent.CLAmber);
+        } else {
+            gl.glColor3ubv(BaseComponent.CLGreen);
+        }
+
         Font.display(0.486f, 0.899f, "B");
 
         // Paint the speedbrake yellow hydrolic indicator
-        if (bLowYellowHyd) gl.glColor3ubv(BaseComponent.CLAmber);
-        else gl.glColor3ubv(BaseComponent.CLGreen);
+        if (m_vLowYellow) {
+            gl.glColor3ubv(BaseComponent.CLAmber);
+        } else {
+            gl.glColor3ubv(BaseComponent.CLGreen);
+        }
+
         Font.display(0.511f, 0.899f, "Y");
-
     }
-
 }

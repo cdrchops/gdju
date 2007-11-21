@@ -88,41 +88,28 @@ public class NdArc extends BaseComponent {
             gl.glRotated(-10.0, 0, 0, 1.0);
         }
         gl.glPopMatrix();
-        CircleEvaluator ce = new CircleEvaluator();
+
 
         // Draw the range arcs
         gl.glColor3ubv(CLWhite);
         gl.glBegin(GL.GL_LINE_STRIP);
-        ce.setOrigin(0.480, 0.167);
-        ce.setRadius(0.169);
-        ce.setArcStartEnd(-60, 60);
-        ce.setDegreesPerPoint(36);
-        ce.evaluate();
+        evaluateCircle(0.169, 60, 36);
 //        evalCircle(0.480, 0.167, 0.160, 36, -60, 60);
         gl.glEnd();
         gl.glBegin(GL.GL_LINE_STRIP);
 //        evalCircle(0.480, 0.167, 0.320, 36, -60, 60);
-        ce.setOrigin(0.480, 0.167);
-        ce.setRadius(0.320);
-        ce.setArcStartEnd(-60, 60);
-        ce.setDegreesPerPoint(36);
-        ce.evaluate();
+        evaluateCircle(0.320, 60, 36);
+
         gl.glEnd();
         gl.glBegin(GL.GL_LINE_STRIP);
 //        evalCircle(0.480, 0.167, 0.480, 12, -52, 52);
-        ce.setOrigin(0.480, 0.167);
-        ce.setRadius(0.480);
-        ce.setArcStartEnd(-52, 52);
-        ce.setDegreesPerPoint(12);
-        ce.evaluate();
+        evaluateCircle(0.480, 52, 12);
+
         gl.glEnd();
         gl.glBegin(GL.GL_LINE_STRIP);
 //        evalCircle(0.480, 0.167, 0.640, 10, -45, 45);
-        ce.setOrigin(0.480, 0.167);
-        ce.setRadius(0.640);
-        ce.setArcStartEnd(-45, 45);
-        ce.setDegreesPerPoint(10);
-        ce.evaluate();
+        evaluateCircle(0.640, 45, 10);
+
         gl.glEnd();
 
         // Paint aircraft symbol to indicate heading and center
@@ -131,5 +118,14 @@ public class NdArc extends BaseComponent {
 //        paint_Aircraft_Symbol();
         AircraftSymbol.display();
         gl.glPopMatrix();
+    }
+
+    private void evaluateCircle(double radius, int arcSE, int degreesPerPoint) {
+        CircleEvaluator ce = new CircleEvaluator();
+        ce.setOrigin(0.480, 0.167);
+        ce.setRadius(radius);
+        ce.setArcStartEnd(-arcSE, arcSE);
+        ce.setDegreesPerPoint(degreesPerPoint);
+        ce.evaluate();
     }
 }
