@@ -15,7 +15,7 @@ public class GlassCockpitMain extends JFrame {
 
     static GLCanvas glcanvas = null;
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final GlassCockpitMain app = new GlassCockpitMain();
 
         // show what we've done
@@ -39,10 +39,10 @@ public class GlassCockpitMain extends JFrame {
         //create our FirstPersonView which serves two purposes
         // 1) it is our GLEventListener, and
         // 2) it is our KeyListener
-        GlassCockpitView fpv = new GlassCockpitView();
+        final GlassCockpitView fpv = new GlassCockpitView();
 
         //only three JOGL lines of code ... and here they are
-        GLCapabilities glcaps = new GLCapabilities();
+        final GLCapabilities glcaps = new GLCapabilities();
         glcanvas = new GLCanvas(glcaps);
         glcanvas.addGLEventListener(fpv);
         glcanvas.addKeyListener(fpv);
@@ -58,9 +58,9 @@ public class GlassCockpitMain extends JFrame {
         centerWindow(this);
     }
 
-    public void centerWindow(Component frame) {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        Dimension frameSize = frame.getSize();
+    public void centerWindow(final Component frame) {
+        final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        final Dimension frameSize = frame.getSize();
 
         if (frameSize.width > screenSize.width) frameSize.width = screenSize.width;
         if (frameSize.height > screenSize.height) frameSize.height = screenSize.height;

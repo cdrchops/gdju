@@ -48,17 +48,12 @@ public class MFD {
                 d.display(glAutoDrawable);
                 break;
             case 9:
-                NdRoseVor ndv = new NdRoseVor();
-                NdRoseIls ndi = new NdRoseIls();
-                NdRose ndr = new NdRose();
-                NdArc ndArc = new NdArc();
-                NdPlan ndp = new NdPlan();
                 //nav/nd classes from A340 AirBus project
-                ndv.display(glAutoDrawable);
-                ndi.display(glAutoDrawable);
-                ndr.display(glAutoDrawable);
-                ndp.display(glAutoDrawable);
-                ndArc.display(glAutoDrawable);
+                new NdRoseVor().display(glAutoDrawable);
+                new NdRoseIls().display(glAutoDrawable);
+                new NdRose().display(glAutoDrawable);
+                new NdPlan().display(glAutoDrawable);
+                new NdArc().display(glAutoDrawable);
                 break;
                 //circle gauge test
 //        cg.display(glAutoDrawable);

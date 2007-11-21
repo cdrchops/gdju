@@ -5,9 +5,9 @@
 package com.gerbildrop.riverhawk.test;
 
 import com.gerbildrop.riverhawk.base.JoglView;
-import com.gerbildrop.riverhawk.gc.ArtificialHorizon;
-import com.gerbildrop.riverhawk.gc.CircleGauge;
-import com.gerbildrop.riverhawk.gc.Fctl;
+import com.gerbildrop.riverhawk.gc.jogl.ArtificialHorizon;
+import com.gerbildrop.riverhawk.gc.jogl.CircleGauge;
+import com.gerbildrop.riverhawk.gc.jogl.Fctl;
 
 /**
  * @author torr

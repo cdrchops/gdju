@@ -7,7 +7,7 @@ import com.gerbildrop.gc.gauges.pfd.BaseGauge;
 
 public class Door extends BaseGauge {
     public Door() {
-        super(100, 00, 100, 100, 4, 4, 0, 0, 1);
+        super(100, 0, 100, 100, 4, 4, 0, 0, 1);
     }
 
     public void display(GLAutoDrawable glAutoDrawable) {

@@ -57,9 +57,11 @@ public class NdRoseVor extends BaseGauge {
             ce.evaluate();
         }
 
-        double fDev = fDeviation < -10.0f ? -10.0f
-                      : fDeviation > 10.0f ? 10.0f
-                        : fDeviation;
+        double fDev = fDeviation < -10.0f
+                        ? -10.0f
+                        : fDeviation > 10.0f
+                            ? 10.0f
+                            : fDeviation;
         gl.glTranslated(fDev / 5.0f * 0.0895f, 0, 0);
         gl.glBegin(GL.GL_LINE_STRIP);
         gl.glVertex3f(-0.031f, 0.049f, 0);

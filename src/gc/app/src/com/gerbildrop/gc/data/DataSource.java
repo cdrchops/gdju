@@ -9,214 +9,214 @@ public class DataSource {
     private static int engineNumber = 1;
     private static int display = 5;
 
-    private static double roll = 0;
-    private static double pitch = 0;
-    private static double trueHeading = 0;
-    private static double magneticVariation = 0;
-    private static double latitudeAircraftLow = 0;
-    private static double latitudeAircraftHigh = 0;
-    private static double longitudeAircraftLow = 0;
-    private static double longitudeAircraftHigh = 0;
-    private static double ias = 0;
-    private static double tas = 0;
-    private static double machSpeed = 0;
-    private static double groundSpeedK = 0;
-    private static double verticalSpeedMS = 0;
-    private static double fracMeters = 0;
-    private static double unitMeters = 0;
-    private static double flapsDeflectionRadians = 0;
-    private static double flapsTrueDeflectionRadians = 0;
-    private static double noseGear = 0;
-    private static double rightGear = 0;
-    private static double leftGear = 0;
-    private static double altimeterPressure = 0;
-    private static double tat = 0;
+    private static double roll;
+    private static double pitch;
+    private static double trueHeading;
+    private static double magneticVariation;
+    private static double latitudeAircraftLow;
+    private static double latitudeAircraftHigh;
+    private static double longitudeAircraftLow;
+    private static double longitudeAircraftHigh;
+    private static double ias;
+    private static double tas;
+    private static double machSpeed;
+    private static double groundSpeedK;
+    private static double verticalSpeedMS;
+    private static double fracMeters;
+    private static double unitMeters;
+    private static double flapsDeflectionRadians;
+    private static double flapsTrueDeflectionRadians;
+    private static double noseGear;
+    private static double rightGear;
+    private static double leftGear;
+    private static double altimeterPressure;
+    private static double tat;
 
     //------------------------Nav Radio--------------------------
-    private static double nav1Freq = 0;
-    private static double nav1Radial = 0;
-    private static String nav1LocalizerNeedle = null;
-    private static double nav1OBS = 0;
-    private static boolean nav1GlideslopeAlive = false;
-    private static String nav1GlideslopeNeedle = null;
-    private static double nav2Freq = 0;
-    private static double nav2Radial = 0;
-    private static String nav2LocalizerNeedle = null;
-    private static double nav2OBS = 0;
-    private static double ADFHeading = 0;
-    private static double rStatus = 0;
+    private static double nav1Freq;
+    private static double nav1Radial;
+    private static String nav1LocalizerNeedle;
+    private static double nav1OBS;
+    private static boolean nav1GlideslopeAlive;
+    private static String nav1GlideslopeNeedle;
+    private static double nav2Freq;
+    private static double nav2Radial;
+    private static String nav2LocalizerNeedle;
+    private static double nav2OBS;
+    private static double ADFHeading;
+    private static double rStatus;
 
     //---------------------------ILS--------------------------------
-    private static double ILSInverseRunwayHeading = 0;
-    private static double ILSGlideslopeInclination = 0;
+    private static double ILSInverseRunwayHeading;
+    private static double ILSGlideslopeInclination;
 
     //------------------------Fuel----------------------------------
-    private static double fuelCentreLevel = 0;
-    private static double fuelLeftLevel = 0;
-    private static double fuelRightLevel = 0;
-    private static double fuelCentreCapacity = 0;
-    private static double fuelLeftCapacity = 0;
-    private static double fuelRightCapacity = 0;
+    private static double fuelCentreLevel;
+    private static double fuelLeftLevel;
+    private static double fuelRightLevel;
+    private static double fuelCentreCapacity;
+    private static double fuelLeftCapacity;
+    private static double fuelRightCapacity;
 
     //------------------------Autopilot-----------------------------
-    private static double dirActive = 0;
-    private static double dirPitch = 0;
-    private static double dirBank = 0;
-    private static double refAirspeedK = 0;
+    private static double dirActive;
+    private static double dirPitch;
+    private static double dirBank;
+    private static double refAirspeedK;
 
     //-------------------------------------------------------------
-    private static double totalAirTemperature = 0;
+    private static double totalAirTemperature;
 
     //---------------------- Fuel Tanks----------------------------
-    private static double fuelTankCapacityCenter = 0;
-    private static double fuelTankCapacityLeft = 0;
-    private static double fuelTankCapacityRight = 0;
-    private static double fuelTankLevelCenter = 0;
-    private static double fuelTankLevelLeft = 0;
-    private static double fuelTankLevelRight = 0;
+    private static double fuelTankCapacityCenter;
+    private static double fuelTankCapacityLeft;
+    private static double fuelTankCapacityRight;
+    private static double fuelTankLevelCenter;
+    private static double fuelTankLevelLeft;
+    private static double fuelTankLevelRight;
 
     //-------------------------Engines-----------------------------
 
     //-------------------------Engine 1----------------------------
-    private static double engine1N1 = 0;
-    private static double engine1N2 = 0;
-    private static double engine1FF_PPH = 0;
-    private static double engine1EPR = 0;
-    private static double engine1EGT = 0;
+    private static double engine1N1;
+    private static double engine1N2;
+    private static double engine1FF_PPH;
+    private static double engine1EPR;
+    private static double engine1EGT;
 
     // mdf
-    private static String pp1 = null;
-    private static String pp2 = null;
-    private static double engine1OilPressure = 0;
-    private static double engine1OilTemp = 0;
-    private static double engine1OilQuantity = 0;
-    private static double engine1Vibration = 0;
-    private static double engine1HydraulicPressure = 0;
-    private static double engine1HydraulicQuantity = 0;
+    private static String pp1;
+    private static String pp2;
+    private static double engine1OilPressure;
+    private static double engine1OilTemp;
+    private static double engine1OilQuantity;
+    private static double engine1Vibration;
+    private static double engine1HydraulicPressure;
+    private static double engine1HydraulicQuantity;
 
     //-------------------------Engine 2----------------------------
-    private static double engine2N1 = 0;
-    private static double engine2N2 = 0;
-    private static double engine2FFPPH = 0;
-    private static double engine2EPR = 0;
-    private static double engine2EGT = 0;
+    private static double engine2N1;
+    private static double engine2N2;
+    private static double engine2FFPPH;
+    private static double engine2EPR;
+    private static double engine2EGT;
 
     // mdf
-    private static String pp3 = null;
-    private static String pp4 = null;
-    private static double engine2OilPressure = 0;
-    private static double engine2OilTemp = 0;
-    private static double engine2OilQuantity = 0;
-    private static double engine2Vibration = 0;
-    private static double engine2HydraulicPressure = 0;
-    private static double engine2HydraulicQuantity = 0;
-    private static double autoPilotHeading = 0;
-    private static double adf1Heading = 0;
-    private static double magneticHeading = 0;
-    private static double latitude = 0;
-    private static double longitude = 0;
-    private static double vertSpeedFPM = 0;
-    private static double altitudeMeters = 0;
-    private static double altitude = 0;
+    private static String pp3;
+    private static String pp4;
+    private static double engine2OilPressure;
+    private static double engine2OilTemp;
+    private static double engine2OilQuantity;
+    private static double engine2Vibration;
+    private static double engine2HydraulicPressure;
+    private static double engine2HydraulicQuantity;
+    private static double autoPilotHeading;
+    private static double adf1Heading;
+    private static double magneticHeading;
+    private static double latitude;
+    private static double longitude;
+    private static double vertSpeedFPM;
+    private static double altitudeMeters;
+    private static double altitude;
 
     //button set parameters
-    private static boolean lcabinDoorClosed = false;
-    private static boolean lcabinDoor2Closed = false;
-    private static boolean lcabinDoor3Closed = false;
-    private static boolean lcabinDoor4Closed = false;
+    private static boolean lcabinDoorClosed;
+    private static boolean lcabinDoor2Closed;
+    private static boolean lcabinDoor3Closed;
+    private static boolean lcabinDoor4Closed;
 
-    private static boolean rcabinDoorClosed = false;
-    private static boolean rcabinDoor2Closed = false;
-    private static boolean rcabinDoor3Closed = false;
-    private static boolean rcabinDoor4Closed = false;
+    private static boolean rcabinDoorClosed;
+    private static boolean rcabinDoor2Closed;
+    private static boolean rcabinDoor3Closed;
+    private static boolean rcabinDoor4Closed;
 
-    private static boolean cargoDoor1Closed = false;
-    private static boolean cargoDoor2Closed = false;
+    private static boolean cargoDoor1Closed;
+    private static boolean cargoDoor2Closed;
 
-    private static boolean bulkDoorClosed = false;
-    private static boolean avionicDoorClosed = false;
+    private static boolean bulkDoorClosed;
+    private static boolean avionicDoorClosed;
 
-    private static boolean resevoir1LowAirPress = false;
-    private static boolean resevoir1Overheat = false;
-    private static boolean resevoir1ValveOpen = false;
-    private static boolean enginePump1On = false;
-    private static boolean enginePump1LowPress = false;
-    private static boolean electPump1commanded = false;
-    private static boolean electPump1On = false;
-    private static boolean electPump1LowPress = false;
+    private static boolean resevoir1LowAirPress;
+    private static boolean resevoir1Overheat;
+    private static boolean resevoir1ValveOpen;
+    private static boolean enginePump1On;
+    private static boolean enginePump1LowPress;
+    private static boolean electPump1commanded;
+    private static boolean electPump1On;
+    private static boolean electPump1LowPress;
 
-    private static boolean resevoir2LowAirPress = false;
-    private static boolean resevoir2Overheat = false;
-    private static boolean resevoir2ValveOpen = false;
-    private static boolean enginePump2On = false;
-    private static boolean enginePump2LowPress = false;
-    private static boolean electPump2commanded = false;
-    private static boolean electPump2On = false;
-    private static boolean electPump2LowPress = false;
+    private static boolean resevoir2LowAirPress;
+    private static boolean resevoir2Overheat;
+    private static boolean resevoir2ValveOpen;
+    private static boolean enginePump2On;
+    private static boolean enginePump2LowPress;
+    private static boolean electPump2commanded;
+    private static boolean electPump2On;
+    private static boolean electPump2LowPress;
 
-    private static boolean resevoir3LowAirPress = false;
-    private static boolean resevoir3Overheat = false;
-    private static boolean resevoir3ValveOpen = false;
-    private static boolean enginePump3On = false;
-    private static boolean enginePump3LowPress = false;
-    private static boolean electPump3commanded = false;
-    private static boolean electPump3On = false;
-    private static boolean electPump3LowPress = false;
+    private static boolean resevoir3LowAirPress;
+    private static boolean resevoir3Overheat;
+    private static boolean resevoir3ValveOpen;
+    private static boolean enginePump3On;
+    private static boolean enginePump3LowPress;
+    private static boolean electPump3commanded;
+    private static boolean electPump3On;
+    private static boolean electPump3LowPress;
 
-    private static boolean resevoir4ValveOpen = false;
-    private static boolean enginePump4On = false;
-    private static boolean enginePump4LowPress = false;
-    private static boolean ramAirTurbineStowed = false;
-    private static boolean ramAirTurbineStowing = false;
-    private static boolean ramAirTurbineOverspeed = false;
+    private static boolean resevoir4ValveOpen;
+    private static boolean enginePump4On;
+    private static boolean enginePump4LowPress;
+    private static boolean ramAirTurbineStowed;
+    private static boolean ramAirTurbineStowing;
+    private static boolean ramAirTurbineOverspeed;
     /*
-    private static int chronoTimer = 0;
+    private static int chronoTimer;
 
-    private static double VOR1Frequency = 0;
+    private static double VOR1Frequency;
 
-    private static double VOR1Bearing = 0;
-    private static double VOR1Course = 0;
-    private static double VOR1Deviation = 0;
+    private static double VOR1Bearing;
+    private static double VOR1Course;
+    private static double VOR1Deviation;
 
-    private static double ADF1Frequency = 0;
+    private static double ADF1Frequency;
 
-    private static double ADF1Bearing = 0;
+    private static double ADF1Bearing;
 
-    private static double DME1Distance = 0;
+    private static double DME1Distance;
 
-    private static double VOR2Frequency = 0;
+    private static double VOR2Frequency;
 
-    private static double VOR2Bearing = 0;
-    private static double VOR2Course = 0;
-    private static double VOR2Deviation = 0;
+    private static double VOR2Bearing;
+    private static double VOR2Course;
+    private static double VOR2Deviation;
 
-    private static double ADF2Frequency = 0;
+    private static double ADF2Frequency;
 
-    private static double ADF2Bearing = 0;
+    private static double ADF2Bearing;
 
-    private static double DME2Distance = 0;
+    private static double DME2Distance;
 
 
-    private static double velocity_V1 = 0;
-    private static double velocity_VR = 0;
-    private static double velocity_V2 = 0;
-    private static double velocity_VSW = 0;
-    private static double velocity_VLS = 0;
-    private static double velocity_VMax = 0;
+    private static double velocity_V1;
+    private static double velocity_VR;
+    private static double velocity_V2;
+    private static double velocity_VSW;
+    private static double velocity_VLS;
+    private static double velocity_VMax;
 */
-    private static double range = 0;
+    private static double range;
 
-    private static boolean windAvailable = false;
+    private static boolean windAvailable;
 
     private static int ndRange = (int) range;
     private static String navSelect1 = "";
     private static String navSelect2 = "";
 
-    private static boolean chronoActve = false;
-    private static boolean VOR1Tuned = false;
-    private static boolean ADF1Tuned = false;
-    private static boolean VOR2Tuned = false;
-    private static boolean ADF2Tuned = false;
+    private static boolean chronoActve;
+    private static boolean VOR1Tuned;
+    private static boolean ADF1Tuned;
+    private static boolean VOR2Tuned;
+    private static boolean ADF2Tuned;
     private static boolean attitudeAvailable = true;
     private static boolean altitudeAvailable = true;
     private static boolean headingAvailable = true;
