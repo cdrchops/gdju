@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir= "." default="fsuipc" name="fsuipc">
+ <property location="src" name="src"/>
+ <property location="build" name="build"/>
+ <property location="lib" name="lib\fsuipc.jar"/>
+ <property location="doc" name="doc"/>
+ 
+<target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+    <mkdir dir="lib"/>
+    <mkdir dir="${doc}"/>
+    </target>
+
+<target depends="init" description="compile the source " name="fsuipc_build">
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac destdir="${build}" srcdir="${src}">
+		<classpath path="${classpath}">
+			<fileset dir="lib">
+				<include name="**/*.jar"/>
+			</fileset>
+		</classpath>
+	</javac>
+</target>
+
+<target depends="fsuipc_build" name="fsuipc">
+    <jar basedir="${build}" jarfile="lib\fsuipc.jar"/>
+</target>
+
+<target depends = "init" name="fsuipc_doc">
+<javadoc 
+           destdir="${doc}"
+           author="true"
+           version="true"
+           use="true"
+           windowtitle="FSUIPC API">
+
+    <fileset dir="${src}" defaultexcludes="yes">
+      <include name="com/flightsim/fsuipc/**" />
+    </fileset>
+
+    <doctitle><![CDATA[<h1>FSUIPC</h1>]]></doctitle>
+    <bottom><![CDATA[<i>Copyright &#169; 2003 Mark Burton. All Rights Reserved.</i>]]></bottom>
+    <tag name="todo" scope="all" description="To do:" />
+    <group title="Group 1 Packages" packages="com.dummy.test.a*"/>
+    <group title="Group 2 Packages" packages="com.dummy.test.b*:com.dummy.test.c*"/>
+    <link offline="true" href="http://java.sun.com/products/jdk/1.2/docs/api/" packagelistLoc="C:\tmp"/>
+    <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+  </javadoc>
+</target>
+
+<target depends="fsuipc" name="interface">
+	<javah class="com.flightsim.fsuipc.fsuipc_wrapper" classpath="${build}" destdir="..\inc"/>
+</target>
+
+</project>

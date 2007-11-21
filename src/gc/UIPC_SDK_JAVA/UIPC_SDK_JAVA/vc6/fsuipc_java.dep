@@ -1,0 +1,8 @@
+# Microsoft Developer Studio Generated Dependency File, included by fsuipc_java.mak
+
+..\src\fsuipc_java.cpp : \
+	"..\bin\com_flightsim_fsuipc_fsuipc_0005fwrapper.h"\
+	"..\c-lib\fsuipc_user.h"\
+	"..\inc\fsuipc_java.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
