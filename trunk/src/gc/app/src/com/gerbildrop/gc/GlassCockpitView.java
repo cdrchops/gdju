@@ -28,9 +28,8 @@ public class GlassCockpitView implements GLEventListener, KeyListener {
     private static final CDU cdu = new CDU();
 
     /** Take care of drawing here. */
-    public void display(GLAutoDrawable glAutoDrawable) {
+    public void display(final GLAutoDrawable glAutoDrawable) {
         initView(glAutoDrawable);
-        GL gl = glAutoDrawable.getGL();
 
         if (MFD) {
             mfd.display(glAutoDrawable);
@@ -42,9 +41,9 @@ public class GlassCockpitView implements GLEventListener, KeyListener {
 //        Font.display(glAutoDrawable, 75, 75, "This is the other String");
     }
 
-    private void initView(GLAutoDrawable glAutoDrawable) {
-        GL gl = glAutoDrawable.getGL();
-        GLU glu = new GLU();
+    private void initView(final GLAutoDrawable glAutoDrawable) {
+        final GL gl = glAutoDrawable.getGL();
+        final GLU glu = new GLU();
         gl.glMatrixMode(GL.GL_MODELVIEW);
         gl.glLoadIdentity();
 
@@ -63,11 +62,11 @@ public class GlassCockpitView implements GLEventListener, KeyListener {
     }
 
     /** Take care of initialization here. */
-    public void init(GLAutoDrawable glAutoDrawable) {
+    public void init(final GLAutoDrawable glAutoDrawable) {
         //The mode is GL.GL_MODELVIEW by default
         //We will also use the default ViewPort
-        GL gl = glAutoDrawable.getGL();
-        GLU glu = new GLU();
+        final GL gl = glAutoDrawable.getGL();
+        final GLU glu = new GLU();
 
         //We're changing the mode to GL.GL_PROJECTION
         //This is where we set up the camera
@@ -75,9 +74,9 @@ public class GlassCockpitView implements GLEventListener, KeyListener {
         gl.glLoadIdentity();
 
         // Aspect is width/height
-        double w = (glAutoDrawable).getWidth();
-        double h = (glAutoDrawable).getHeight();
-        double aspect = w / h;
+        final double w = (glAutoDrawable).getWidth();
+        final double h = (glAutoDrawable).getHeight();
+        final double aspect = w / h;
         //When using gluPerspective near and far need
         //to be positive.
         //The arguments are:
@@ -85,13 +84,13 @@ public class GlassCockpitView implements GLEventListener, KeyListener {
         glu.gluPerspective(60.0, aspect, 2.0, 20.0);
     }
 
-    public void setGLCanvas(GLCanvas glc) {
+    public void setGLCanvas(final GLCanvas glc) {
         this.glc = glc;
     }
 
     public static boolean MFD = true;
 
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(final KeyEvent e) {
 
         if (e.getKeyChar() == '`') {
             MFD = !MFD;
@@ -106,15 +105,21 @@ public class GlassCockpitView implements GLEventListener, KeyListener {
         glc.repaint();
     }
 
-    public void displayChanged(GLAutoDrawable glAutoDrawable, boolean b, boolean b1) {
+    public void displayChanged(final GLAutoDrawable glAutoDrawable,
+                               final boolean b,
+                               final boolean b1) {
     }
 
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(final KeyEvent e) {
     }
 
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(final KeyEvent e) {
     }
 
-    public void reshape(GLAutoDrawable glAutoDrawable, int i, int i1, int i2, int i3) {
+    public void reshape(final GLAutoDrawable glAutoDrawable,
+                        final int i,
+                        final int i1,
+                        final int i2,
+                        final int i3) {
     }
 }

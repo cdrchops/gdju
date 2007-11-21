@@ -186,7 +186,7 @@ public class FsuipcHook extends FSUIPC {
             int ret = fsuipc_wrapper.Open(FsuipcWrapper.SIM_ANY);
             int counter = 0;
 
-            while (true && counter <= 50) {
+            while (counter <= 50) {
                 if (ret == 0) {
                     System.out.println("Flight sim not found");
                     ret = fsuipc_wrapper.Open(FsuipcWrapper.SIM_ANY);

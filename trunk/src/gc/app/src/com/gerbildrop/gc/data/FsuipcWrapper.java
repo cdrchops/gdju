@@ -20,7 +20,7 @@ public class FsuipcWrapper {
         System.loadLibrary("fsuipc_java");
     }
 
-    /**
+    /*
      * Connect to FS.
      *
      * @param aFlightSim Version of flightsim to try and connect to.
@@ -29,15 +29,15 @@ public class FsuipcWrapper {
      */
     public static synchronized native int open(int aFlightSim);
 
-    /** close the connection */
+    /* close the connection */
     public static synchronized native void close();
 
-    /** Read bytes from FS */
+    /* Read bytes from FS */
     public static synchronized native void readData(int aOffset, int aCount, byte[] aData);
 
-    /** Write byte to FS */
+    /* Write byte to FS */
     public static synchronized native void writeData(int aOffset, int aCount, byte[] aData);
 
-    /** process the commands */
+    /* process the commands */
     public static synchronized native void process();
 }
