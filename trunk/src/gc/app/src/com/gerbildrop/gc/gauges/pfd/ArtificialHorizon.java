@@ -3,6 +3,7 @@ package com.gerbildrop.gc.gauges.pfd;
 import com.gerbildrop.gc.util.GLUtil;
 
 import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
 import javax.media.opengl.GLAutoDrawable;
 
 public class ArtificialHorizon extends BaseGauge {
@@ -348,7 +349,7 @@ public class ArtificialHorizon extends BaseGauge {
 
             // Draw the aircraft wings and center
             gl.glColor3ubv(CLBlack);
-            gl.glBegin(GL.GL_QUAD_STRIP);
+            gl.glBegin(GL2.GL_QUAD_STRIP);
             gl.glVertex2f(0.247f, 0.504f);
             gl.glVertex2f(0.247f, 0.484f);
             gl.glVertex2f(0.360f, 0.504f);
@@ -356,13 +357,13 @@ public class ArtificialHorizon extends BaseGauge {
             gl.glVertex2f(0.360f, 0.453f);
             gl.glVertex2f(0.340f, 0.453f);
             gl.glEnd();
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.453f, 0.504f);
             gl.glVertex2f(0.453f, 0.484f);
             gl.glVertex2f(0.473f, 0.484f);
             gl.glVertex2f(0.473f, 0.504f);
             gl.glEnd();
-            gl.glBegin(GL.GL_QUAD_STRIP);
+            gl.glBegin(GL2.GL_QUAD_STRIP);
             gl.glVertex2f(0.679f, 0.504f);
             gl.glVertex2f(0.679f, 0.484f);
             gl.glVertex2f(0.566f, 0.504f);

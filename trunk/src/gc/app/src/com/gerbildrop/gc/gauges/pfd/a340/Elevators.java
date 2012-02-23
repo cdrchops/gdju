@@ -1,10 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class Elevators {//extends BaseGauge{
     double m_vLeftPos = 0;
@@ -37,7 +38,7 @@ public class Elevators {//extends BaseGauge{
 
 
     void paintLeft(GLAutoDrawable glAutoDrawable) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         double fPos = m_vLeftPos;
         boolean bFail = m_vLeftFail;
         boolean bLowBlue = m_vLeftLowBlue;
@@ -50,7 +51,7 @@ public class Elevators {//extends BaseGauge{
 
 
         gl.glColor3ubv(BaseGauge.CLGrey);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex3f(0.117f, 0.296f, 0);
         gl.glVertex3f(0.167f, 0.296f, 0);
         gl.glVertex3f(0.167f, 0.342f, 0);
@@ -73,7 +74,7 @@ public class Elevators {//extends BaseGauge{
 
 
     void paintRight(GLAutoDrawable glAutoDrawable) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
 
         double fPos = m_vRightPos;
         boolean bFail = m_vRightFail;
@@ -86,7 +87,7 @@ public class Elevators {//extends BaseGauge{
         Font.display(glAutoDrawable, 0.807f, 0.409f, "ELEV");
 
         gl.glColor3ubv(BaseGauge.CLGrey);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex3f(0.825f, 0.296f, 0);
         gl.glVertex3f(0.875f, 0.296f, 0);
         gl.glVertex3f(0.875f, 0.342f, 0);
@@ -109,7 +110,7 @@ public class Elevators {//extends BaseGauge{
 
 
     void paintElevatorIndication(GLAutoDrawable glAutoDrawable, double fPos, boolean bFail) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         // Elevator scale
         gl.glColor3ubv(BaseGauge.CLWhite);
 //        setPaintWidth(3);

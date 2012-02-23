@@ -1,10 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class Ailerons {//extends BaseGauge{
     double m_vLeftPos1 = 0;
@@ -33,7 +34,7 @@ public class Ailerons {//extends BaseGauge{
     }
 
     void paintLeft(GLAutoDrawable glAutoDrawable) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         double fPos1 = m_vLeftPos1;
         double fPos2 = m_vLeftPos2;
         boolean bFail1 = m_vLeftFail1;
@@ -48,7 +49,7 @@ public class Ailerons {//extends BaseGauge{
 
         Font.display(glAutoDrawable, 0.011f, 0.689f, "AIL");
         gl.glColor3ubv(BaseGauge.CLGrey);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex3f(0.035f, 0.557f, 0);
         gl.glVertex3f(0.085f, 0.557f, 0);
         gl.glVertex3f(0.085f, 0.603f, 0);
@@ -58,7 +59,7 @@ public class Ailerons {//extends BaseGauge{
 
         Font.display(glAutoDrawable, 0.035f, 0.553f, "YG");
         gl.glColor3ubv(BaseGauge.CLGrey);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex3f(0.163f, 0.557f, 0);
         gl.glVertex3f(0.213f, 0.557f, 0);
         gl.glVertex3f(0.213f, 0.603f, 0);
@@ -76,7 +77,7 @@ public class Ailerons {//extends BaseGauge{
 
 
     void paintRight(GLAutoDrawable glAutoDrawable) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         double fPos1 = m_vRightPos1;
         double fPos2 = m_vRightPos2;
         boolean bFail1 = m_vRightFail1;
@@ -89,7 +90,7 @@ public class Ailerons {//extends BaseGauge{
         Font.display(glAutoDrawable, 0.914f, 0.724f, " R ");
         Font.display(glAutoDrawable, 0.914f, 0.689f, "AIL");
         gl.glColor3ubv(BaseGauge.CLGrey);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex3f(0.782f, 0.557f, 0);
         gl.glVertex3f(0.832f, 0.557f, 0);
         gl.glVertex3f(0.832f, 0.603f, 0);
@@ -98,7 +99,7 @@ public class Ailerons {//extends BaseGauge{
         gl.glColor3ubv(BaseGauge.CLGreen);
         Font.display(glAutoDrawable, 0.782f, 0.553f, "GB");
         gl.glColor3ubv(BaseGauge.CLGrey);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex3f(0.911f, 0.557f, 0);
         gl.glVertex3f(0.961f, 0.557f, 0);
         gl.glVertex3f(0.961f, 0.603f, 0);
@@ -116,7 +117,7 @@ public class Ailerons {//extends BaseGauge{
 
 
     void paintAileronIndication(GLAutoDrawable glAutoDrawable, double fPos1, double fPos2, boolean bFail1, boolean bFail2, double fNeutral, double fDrooped) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         // Aileron scale
         gl.glColor3ubv(BaseGauge.CLWhite);
 //            setPaintWidth(3);
@@ -176,7 +177,7 @@ public class Ailerons {//extends BaseGauge{
         // Drooped position
         gl.glPushMatrix();
         gl.glTranslatef(0.0f, (float) fDrooped / 200.0f, 0.0f);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex3f(-0.030f, +0.030f, 0.0f);
         gl.glVertex3f(+0.030f, +0.030f, 0.0f);
         gl.glVertex3f(+0.030f, -0.030f, 0.0f);

@@ -1,9 +1,9 @@
 package com.gerbildrop.gc.display;
 
-import java.awt.event.KeyEvent;
-
 import com.gerbildrop.gc.data.DataSource;
 import com.gerbildrop.gc.window.WindowUtil;
+
+import java.awt.event.KeyEvent;
 
 public class MfdKeys {
     static int engineNumber = DataSource.getEngineNumber();

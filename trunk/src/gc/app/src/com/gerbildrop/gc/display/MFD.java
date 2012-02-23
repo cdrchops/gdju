@@ -1,7 +1,5 @@
 package com.gerbildrop.gc.display;
 
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.data.DataSource;
 import com.gerbildrop.gc.gauges.pfd.ArtificialHorizon;
 import com.gerbildrop.gc.gauges.pfd.a340.Door;
@@ -20,6 +18,8 @@ import com.gerbildrop.gc.gauges.pfd.opengc.HeadingIndicator;
 import com.gerbildrop.gc.gauges.pfd.opengc.SpeedTape;
 import com.gerbildrop.gc.gauges.pfd.opengc.SpeedTicker;
 import com.gerbildrop.gc.gauges.pfd.opengc.VSI;
+
+import javax.media.opengl.GLAutoDrawable;
 
 public class MFD {
     public MFD() {

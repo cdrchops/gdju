@@ -1,9 +1,10 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class Spoilers {
 //    public Spoilers() {
@@ -29,7 +30,7 @@ public class Spoilers {
     }
 
     public void display(GLAutoDrawable glAutoDrawable) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
 
         int iSpoilerNumber;
 
@@ -68,25 +69,25 @@ public class Spoilers {
         gl.glPopMatrix();
     }
 
-    void paintSpoilerIndication(GL gl, boolean bDeflected, boolean bFault) {
+    void paintSpoilerIndication(GL2 gl, boolean bDeflected, boolean bFault) {
         if (bFault) {
             // Paint in amber when spoiler is faulty
             gl.glColor3ubv(BaseGauge.CLAmber);
             if (bDeflected) {
                 // Paint the Deflected (triangle) symbol
-                gl.glBegin(GL.GL_LINE_LOOP);
+                gl.glBegin(GL2.GL_LINE_LOOP);
                 gl.glVertex3d(-0.500, -0.500, 0);
                 gl.glVertex3d(+0.500, -0.500, 0);
                 gl.glVertex3d(0.000, +0.500, 0);
                 gl.glEnd();
             } else {
                 // Paint the Retracted (Z) sumbol
-                gl.glBegin(GL.GL_LINES);
+                gl.glBegin(GL2.GL_LINES);
                 gl.glVertex3f(-0.500f, -0.500f, 0);
                 gl.glVertex3f(+0.500f, -0.500f, 0);
                 gl.glEnd();
 
-                gl.glBegin(GL.GL_LINE_STRIP);
+                gl.glBegin(GL2.GL_LINE_STRIP);
                 gl.glVertex3f(+0.400f, -0.400f, 0);
                 gl.glVertex3f(-0.400f, -0.400f, 0);
                 gl.glVertex3f(+0.400f, +0.400f, 0);
@@ -98,14 +99,14 @@ public class Spoilers {
             gl.glColor3ubv(BaseGauge.CLGreen);
             if (bDeflected) {
                 // Paint the Deflected (triangle) symbol
-                gl.glBegin(GL.GL_LINE_LOOP);
+                gl.glBegin(GL2.GL_LINE_LOOP);
                 gl.glVertex3d(-0.500, -0.500, 0);
                 gl.glVertex3d(+0.500, -0.500, 0);
                 gl.glVertex3d(0.000, +0.500, 0);
                 gl.glEnd();
             } else {
                 // Paint the Retracted (dash) symbol
-                gl.glBegin(GL.GL_LINES);
+                gl.glBegin(GL2.GL_LINES);
                 gl.glVertex3d(-0.500, -0.500, 0);
                 gl.glVertex3d(+0.500, -0.500, 0);
                 gl.glEnd();

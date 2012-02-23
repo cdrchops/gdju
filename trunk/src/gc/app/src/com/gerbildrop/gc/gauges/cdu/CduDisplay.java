@@ -1,7 +1,5 @@
 package com.gerbildrop.gc.gauges.cdu;
 
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.cdu.pageSelections.DestDisplay;
 import com.gerbildrop.gc.gauges.cdu.pageSelections.InsDisplay;
@@ -10,6 +8,8 @@ import com.gerbildrop.gc.gauges.cdu.pageSelections.PosDisplay;
 import com.gerbildrop.gc.gauges.cdu.pageSelections.StrDisplay;
 import com.gerbildrop.gc.gauges.cdu.pageSelections.TacanDisplay;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GLAutoDrawable;
 
 public class CduDisplay extends BaseGauge {
     public CduDisplay() {

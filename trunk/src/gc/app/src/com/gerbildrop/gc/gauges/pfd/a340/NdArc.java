@@ -1,12 +1,13 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
 import com.gerbildrop.gc.symbol.AircraftSymbol;
 import com.gerbildrop.gc.util.CircleEvaluator;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class NdArc extends BaseGauge {
     public NdArc() {
@@ -56,7 +57,7 @@ public class NdArc extends BaseGauge {
 
         // Paint current heading needle
         gl.glColor3ubv(CLYellow);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex2f(0.476f, 0.830f);
         gl.glVertex2f(0.484f, 0.830f);
         gl.glVertex2f(0.484f, 0.775f);

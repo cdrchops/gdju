@@ -1,8 +1,8 @@
 package com.gerbildrop.gc.gauges.cdu.pageSelections;
 
-import java.awt.event.KeyEvent;
-
 import com.gerbildrop.gc.gauges.cdu.CduManager;
+
+import java.awt.event.KeyEvent;
 
 public class DestUtil {
     public static void destSoftKeys(KeyEvent e) {

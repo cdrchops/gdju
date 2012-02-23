@@ -1,9 +1,10 @@
 package com.gerbildrop.gc.display;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class MasterCaution {
     public void display(GLAutoDrawable glAutoDrawable) {
@@ -16,7 +17,7 @@ public class MasterCaution {
     }
 
     private void drawWarning(GLAutoDrawable glAutoDrawable, int x, int y, String display) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         //draw box with position x & y
         // then draw font with offsets that are needed
         // adjust font display x & y for offsets
@@ -37,8 +38,8 @@ public class MasterCaution {
         Font.display(glAutoDrawable, x, y, display);
     }
 
-    private static void drawOneLine(GL gl, float x1, float y1, float x2, float y2) {
-        gl.glBegin(GL.GL_LINES);
+    private static void drawOneLine(GL2 gl, float x1, float y1, float x2, float y2) {
+        gl.glBegin(GL2.GL_LINES);
         gl.glVertex2f((x1), (y1));
         gl.glVertex2f((x2), (y2));
         gl.glEnd();

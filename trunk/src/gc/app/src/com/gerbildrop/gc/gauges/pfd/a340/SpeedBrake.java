@@ -1,10 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class SpeedBrake {// extends BaseGauge {
     boolean m_vLowGreen = true;
@@ -19,7 +20,7 @@ public class SpeedBrake {// extends BaseGauge {
     }
 
     public void display(GLAutoDrawable glAutoDrawable) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
 //        super.display(glAutoDrawable);
         boolean bGreen = m_vLowGreen;
         boolean bBlue = m_vLowBlue;
@@ -36,11 +37,11 @@ public class SpeedBrake {// extends BaseGauge {
 
 
     void paintSpeedbrakeIndication(GLAutoDrawable glAutoDrawable, boolean bLowGreenHyd, boolean bLowBlueHyd, boolean bLowYellowHyd) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         /* Paint the speedbrake indication */
         // Paint the grey box behind the indication
         gl.glColor3ubv(BaseGauge.CLGrey);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex3f(0.461f, 0.903f, 0);
         gl.glVertex3f(0.536f, 0.903f, 0);
         gl.glVertex3f(0.536f, 0.949f, 0);

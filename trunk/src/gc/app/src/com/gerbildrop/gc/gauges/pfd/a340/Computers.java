@@ -1,10 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class Computers {// extends BaseGauge {
     boolean m_vComputerPrim1 = true;
@@ -28,7 +29,7 @@ public class Computers {// extends BaseGauge {
         boolean bPrim3 = m_vComputerPrim3;
         boolean bSec1 = m_vComputerSec1;
         boolean bSec2 = m_vComputerSec2;
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         /* Paint PRIM SEC labels */
         gl.glColor3ubv(BaseGauge.CLWhite);
         Font.display(glAutoDrawable, 0.233f, 0.684f, "PRIM");
@@ -67,7 +68,7 @@ public class Computers {// extends BaseGauge {
 
 
     void paintComputersIndication(GLAutoDrawable glAutoDrawable, boolean bFailure, final String sLabel) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         /* Paint the box around the computer indication */
         // Paint in amber for failed and in grey for working computer
         if (bFailure) gl.glColor3ubv(BaseGauge.CLAmber);

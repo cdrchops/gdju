@@ -1,14 +1,15 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class StatusArea {
 
     public static void display(GLAutoDrawable glAutoDrawable) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         if (!BaseGauge.bInited) {
             double vTimeOfDay_Hour = 1;//diom_loadVariable("timeofday.hour");
             double vTimeOfDay_Minute = 0;//diom_loadVariable("timeofday.minute");
@@ -44,8 +45,8 @@ public class StatusArea {
 
         // Paint status text
         gl.glColor3b((byte) 255, (byte) 255, (byte) 255);
-        PFD.fnt_printf(glAutoDrawable, 0.023, 0.057, "TAT " + fTotalAir + " °C");
-        PFD.fnt_printf(glAutoDrawable, 0.023, 0.017, "SAT " + fStaticAir + " °C");
+        PFD.fnt_printf(glAutoDrawable, 0.023, 0.057, "TAT " + fTotalAir + " \u00B0C");
+        PFD.fnt_printf(glAutoDrawable, 0.023, 0.017, "SAT " + fStaticAir + " \u00B0C");
         PFD.fnt_printf(glAutoDrawable, 0.415, 0.017, iHour + " H " + iMinute);
         PFD.fnt_printf(glAutoDrawable, 0.675, 0.057, "GW " + iGrossWeight + " KG");
         PFD.fnt_printf(glAutoDrawable, 0.675, 0.017, "GWCC " + fCenterOfGravity + "  %%");

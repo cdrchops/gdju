@@ -1,9 +1,10 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class Door extends BaseGauge {
     public Door() {
@@ -75,13 +76,13 @@ public class Door extends BaseGauge {
 
 
     void paintLeftCabinDoor(GLAutoDrawable glAutoDrawable, boolean bClosed, boolean bArmed) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         if (bClosed) {
             gl.glColor3ubv(BaseGauge.CLGreen);
             gl.glBegin(GL.GL_LINE_LOOP);
         } else {
             gl.glColor3ubv(BaseGauge.CLAmber);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
         }
         gl.glVertex3f(0.420f, 0.798f, 0);
         gl.glVertex3f(0.451f, 0.798f, 0);
@@ -109,13 +110,13 @@ public class Door extends BaseGauge {
 
 
     void paintRightCabinDoor(GLAutoDrawable glAutoDrawable, boolean bClosed, boolean bArmed) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         if (bClosed) {
             gl.glColor3ubv(BaseGauge.CLGreen);
             gl.glBegin(GL.GL_LINE_LOOP);
         } else {
             gl.glColor3ubv(BaseGauge.CLAmber);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
         }
         gl.glVertex3f(0.580f, 0.798f, 0);
         gl.glVertex3f(0.549f, 0.798f, 0);
@@ -143,13 +144,13 @@ public class Door extends BaseGauge {
 
 
     void paintCargoDoor(GLAutoDrawable glAutoDrawable, boolean bClosed) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         if (bClosed) {
             gl.glColor3ubv(BaseGauge.CLGreen);
             gl.glBegin(GL.GL_LINE_LOOP);
         } else {
             gl.glColor3ubv(BaseGauge.CLAmber);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
         }
         gl.glVertex3f(0.580f, 0.720f, 0);
         gl.glVertex3f(0.580f, 0.673f, 0);
@@ -170,13 +171,13 @@ public class Door extends BaseGauge {
 
 
     void paintBulkDoor(GLAutoDrawable glAutoDrawable, boolean bClosed) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         if (bClosed) {
             gl.glColor3ubv(BaseGauge.CLGreen);
             gl.glBegin(GL.GL_LINE_LOOP);
         } else {
             gl.glColor3ubv(BaseGauge.CLAmber);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
         }
         gl.glVertex3f(0.553f, 0.377f, 0);
         gl.glVertex3f(0.553f, 0.331f, 0);
@@ -196,13 +197,13 @@ public class Door extends BaseGauge {
 
 
     void paintAvionicDoor(GLAutoDrawable glAutoDrawable, boolean bClosed) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         if (bClosed) {
             gl.glColor3ubv(BaseGauge.CLGreen);
             gl.glBegin(GL.GL_LINE_LOOP);
         } else {
             gl.glColor3ubv(BaseGauge.CLAmber);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
         }
         gl.glVertex3f(0.486f, 0.887f, 0);
         gl.glVertex3f(0.486f, 0.829f, 0);

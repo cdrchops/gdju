@@ -1,10 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class Fctl extends BaseGauge {
     public Fctl() {
@@ -42,7 +43,7 @@ public class Fctl extends BaseGauge {
 
         Font.display(glAutoDrawable, 0.461f, 0.365f, "RUD");
         gl.glColor3ubv(CLGrey);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex3f(0.461f, 0.323f, 0);
         gl.glVertex3f(0.536f, 0.323f, 0);
         gl.glVertex3f(0.536f, 0.369f, 0);

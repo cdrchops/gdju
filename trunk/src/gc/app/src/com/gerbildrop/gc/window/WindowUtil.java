@@ -38,14 +38,13 @@
 
 package com.gerbildrop.gc.window;
 
+import javax.swing.JFrame;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
-import javax.swing.JFrame;
 
 public class WindowUtil {
 

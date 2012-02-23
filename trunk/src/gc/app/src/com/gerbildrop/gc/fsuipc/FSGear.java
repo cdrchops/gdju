@@ -25,13 +25,13 @@ public class FSGear extends FSUIPC {
         byte[] data = new byte[2];
         data[0] = 0;
         data[1] = 0;
-        fsuipc_wrapper.WriteData(0x0BE8, 2, data);
+        fsuipc_wrapper.writeData(0x0BE8, 2, data);
     }
 
     public void GearDown() {
         byte[] data = new byte[2];
         data[0] = 0x00;
         data[1] = 0x40;
-        fsuipc_wrapper.WriteData(0x0BE8, 2, data);
+        fsuipc_wrapper.writeData(0x0BE8, 2, data);
     }
 }

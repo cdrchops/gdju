@@ -1,7 +1,5 @@
 package com.gerbildrop.gc.gauges.cdu;
 
-import java.awt.event.KeyEvent;
-
 import com.gerbildrop.gc.gauges.cdu.pageSelections.DestUtil;
 import com.gerbildrop.gc.gauges.cdu.pageSelections.InsUtil;
 import com.gerbildrop.gc.gauges.cdu.pageSelections.NavUtil;
@@ -9,6 +7,8 @@ import com.gerbildrop.gc.gauges.cdu.pageSelections.PosUtil;
 import com.gerbildrop.gc.gauges.cdu.pageSelections.StrUtil;
 import com.gerbildrop.gc.gauges.cdu.pageSelections.TacanUtil;
 import com.gerbildrop.gc.window.WindowUtil;
+
+import java.awt.event.KeyEvent;
 
 public class CduKeys {
     public static void checkKeys(KeyEvent e) {

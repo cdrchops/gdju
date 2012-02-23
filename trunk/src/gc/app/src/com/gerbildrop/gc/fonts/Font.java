@@ -1,23 +1,26 @@
 package com.gerbildrop.gc.fonts;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
+//import com.sun.opengl.util.GLUT;
 
-import com.sun.opengl.util.GLUT;
+import com.jogamp.opengl.util.gl2.GLUT;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 //todo: fix to use the freetype library
 public class Font {
     private static int font = GLUT.BITMAP_HELVETICA_12;
 
     public static void display(GLAutoDrawable glAutoDrawable, double x, double y, String display) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         GLUT glut = new GLUT();
 
         float m_Sizex = 1.0f;
         float m_Sizey = 1.0f;
 
         // Save the modelview matrix
-        gl.glMatrixMode(GL.GL_MODELVIEW);
+        gl.glMatrixMode(GL2.GL_MODELVIEW);
         gl.glPushMatrix();
 
         // Set position and size

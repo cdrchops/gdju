@@ -1,10 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
 import com.gerbildrop.gc.util.GLUtil;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class PFD extends BaseGauge {
     public PFD() {
@@ -387,7 +388,7 @@ public class PFD extends BaseGauge {
 
             // Draw the aircraft wings and center
             gl.glColor3ubv(CLBlack);
-            gl.glBegin(GL.GL_QUAD_STRIP);
+            gl.glBegin(GL2.GL_QUAD_STRIP);
             gl.glVertex2f(0.247f, 0.504f);
             gl.glVertex2f(0.247f, 0.484f);
             gl.glVertex2f(0.360f, 0.504f);
@@ -395,13 +396,13 @@ public class PFD extends BaseGauge {
             gl.glVertex2f(0.360f, 0.453f);
             gl.glVertex2f(0.340f, 0.453f);
             gl.glEnd();
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.453f, 0.504f);
             gl.glVertex2f(0.453f, 0.484f);
             gl.glVertex2f(0.473f, 0.484f);
             gl.glVertex2f(0.473f, 0.504f);
             gl.glEnd();
-            gl.glBegin(GL.GL_QUAD_STRIP);
+            gl.glBegin(GL2.GL_QUAD_STRIP);
             gl.glVertex2f(0.679f, 0.504f);
             gl.glVertex2f(0.679f, 0.484f);
             gl.glVertex2f(0.566f, 0.504f);
@@ -455,7 +456,7 @@ public class PFD extends BaseGauge {
 
             // Paint the background
             gl.glColor3ubv(CLGrey);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.024f, 0.761f);
             gl.glVertex2f(0.165f, 0.761f);
             gl.glVertex2f(0.165f, 0.224f);
@@ -482,7 +483,7 @@ public class PFD extends BaseGauge {
                 }
             }
 
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             // Paint VMax bar
             double fY1 = speedToScreen(fIAS, fVMax);
             if (fY1 <= 0.761) {
@@ -556,13 +557,13 @@ public class PFD extends BaseGauge {
 
             // Erase scale that is outside of indicator
             gl.glColor3ubv(CLBlack);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.024f, 0.761f);
             gl.glVertex2f(0.024f, 0.800f);
             gl.glVertex2f(0.165f, 0.800f);
             gl.glVertex2f(0.165f, 0.761f);
             gl.glEnd();
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.024f, 0.224f);
             gl.glVertex2f(0.024f, 0.195f);
             gl.glVertex2f(0.165f, 0.195f);
@@ -601,7 +602,7 @@ public class PFD extends BaseGauge {
             gl.glVertex2f(0.196f, 0.478f);
             gl.glVertex2f(0.196f, 0.508f);
             gl.glEnd();
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.024f, 0.486f);
             gl.glVertex2f(0.039f, 0.486f);
             gl.glVertex2f(0.039f, 0.500f);
@@ -627,7 +628,7 @@ public class PFD extends BaseGauge {
 
             // Paint the background
             gl.glColor3ubv(CLGrey);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.231f, 0.043f);
             gl.glVertex2f(0.231f, 0.141f);
             gl.glVertex2f(0.678f, 0.141f);
@@ -662,13 +663,13 @@ public class PFD extends BaseGauge {
 
             // Erase scale that is outside of indicator
             gl.glColor3ubv(CLBlack);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.180f, 0.043f);
             gl.glVertex2f(0.180f, 0.141f);
             gl.glVertex2f(0.231f, 0.141f);
             gl.glVertex2f(0.231f, 0.043f);
             gl.glEnd();
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.678f, 0.043f);
             gl.glVertex2f(0.678f, 0.141f);
             gl.glVertex2f(0.728f, 0.141f);
@@ -704,7 +705,7 @@ public class PFD extends BaseGauge {
         if (bAvail) {
             // Paint the backgroun
             gl.glColor3ubv(CLGrey);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.929f, 0.761f);
             gl.glVertex2f(0.984f, 0.651f);
             gl.glVertex2f(0.984f, 0.337f);
@@ -738,7 +739,7 @@ public class PFD extends BaseGauge {
         if (bAvail) {
             // Paint the background
             gl.glColor3ubv(CLGrey);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.757f, 0.761f);
             gl.glVertex2f(0.855f, 0.761f);
             gl.glVertex2f(0.855f, 0.227f);
@@ -767,7 +768,7 @@ public class PFD extends BaseGauge {
 
             // Erase pixels outside of indicator
             gl.glColor3ubv(CLBlack);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.757f, 0.801f);
             gl.glVertex2f(0.855f, 0.801f);
             gl.glVertex2f(0.855f, 0.761f);
@@ -800,7 +801,7 @@ public class PFD extends BaseGauge {
 
             // Paint the background for the index
             gl.glColor3ubv(CLBlack);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.855f, 0.529f);
             gl.glVertex2f(0.757f, 0.529f);
 
@@ -827,7 +828,7 @@ public class PFD extends BaseGauge {
 
             // Erase pixels outside of indicator
             gl.glColor3ubv(CLBlack);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.855f, 0.545f);
             gl.glVertex2f(0.910f, 0.545f);
             gl.glVertex2f(0.910f, 0.575f);
@@ -871,7 +872,7 @@ public class PFD extends BaseGauge {
             gl.glVertex2f(0.855f, 0.455f);
             gl.glVertex2f(0.757f, 0.455f);
             gl.glEnd();
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.910f, 0.496f);
             gl.glVertex2f(0.922f, 0.496f);
             gl.glVertex2f(0.922f, 0.488f);

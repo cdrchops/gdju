@@ -7,6 +7,7 @@
 package com.gerbildrop.gc.util;
 
 import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
 import javax.media.opengl.GLAutoDrawable;
 
 public class ProjectionUtil {
@@ -19,14 +20,14 @@ public class ProjectionUtil {
      * see Utils#loadMatrix(javax.media.opengl.GLAutoDrawable)
      */
     public static void switchToOrthoProjection(GLAutoDrawable glDrawable) {
-        final GL gl = glDrawable.getGL();
+        final GL2 gl = glDrawable.getGL().getGL2();
 
         /*
          * We save the current projection matrix and we define a viewing volume
          * in the orthographic mode.
          * Projection matrix stack defines how the scene is projected to the screen.
          */
-        gl.glMatrixMode(GL.GL_PROJECTION);              //select the Projection matrix
+        gl.glMatrixMode(GL2.GL_PROJECTION);              //select the Projection matrix
         gl.glPushMatrix();                              //save the current projection matrix
         gl.glLoadIdentity();                            //reset the current projection matrix to creates a new Orthographic projection
         //Creates a new orthographic viewing volume
@@ -37,7 +38,7 @@ public class ProjectionUtil {
          * Select, save and reset the modelview matrix.
          * Modelview matrix stack store transformation like translation, rotation ...
          */
-        gl.glMatrixMode(GL.GL_MODELVIEW);
+        gl.glMatrixMode(GL2.GL_MODELVIEW);
         gl.glPushMatrix();
         gl.glLoadIdentity();
     }
@@ -48,15 +49,15 @@ public class ProjectionUtil {
      * see Utils#switchToOrthoProjection(GLAutoDrawable)
      */
     public static void loadMatrix(GLAutoDrawable glDrawable) {
-        GL gl = glDrawable.getGL();
+        GL2 gl = glDrawable.getGL().getGL2();
 
         //Select the Projection matrix stack
-        gl.glMatrixMode(GL.GL_PROJECTION);
+        gl.glMatrixMode(GL2.GL_PROJECTION);
         //Load the previous Projection matrix (Generaly, it is a Perspective projection)
         gl.glPopMatrix();
 
         //Select the Modelview matrix stack
-        gl.glMatrixMode(GL.GL_MODELVIEW);
+        gl.glMatrixMode(GL2.GL_MODELVIEW);
         //Load the previous Modelview matrix
         gl.glPopMatrix();
     }
