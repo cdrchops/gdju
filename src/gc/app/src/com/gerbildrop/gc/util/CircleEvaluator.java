@@ -1,6 +1,7 @@
 package com.gerbildrop.gc.util;
 
 import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
 
 public class CircleEvaluator {
 /*=========================================================================
@@ -44,9 +45,9 @@ public class CircleEvaluator {
      */
     private double m_DegreesPerPoint;
 
-    private GL gl;
+    private GL2 gl;
 
-    public CircleEvaluator(GL gl) {
+    public CircleEvaluator(GL2 gl) {
         m_XOrigin = 0;
         m_YOrigin = 0;
 

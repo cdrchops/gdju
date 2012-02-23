@@ -11,6 +11,9 @@ package com.gerbildrop.gc.fonts;
  * http://lwjgl.org/forum/viewtopic.php?t=1258
  */
 
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontFormatException;
@@ -21,9 +24,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
-
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
 
 
 /** @author Jeremy Adams (elias4444) */
@@ -133,7 +133,7 @@ public class FontTranslator {
     }
 
     public void drawText(GLAutoDrawable glAutoDrawable, String whatchars, float x, float y, float z, float a, float rotxpass, float rotypass, float rotzpass) {
-        GL gl = glAutoDrawable.getGL();
+        GL2 gl = glAutoDrawable.getGL().getGL2();
         float totalwidth = 0;
         int k = 0;
         for (int i = 0; i < whatchars.length(); i++) {
@@ -146,7 +146,7 @@ public class FontTranslator {
     }
 
 
-    public void drawText(GL gl, String whatchars, float x, float y, float z, float red, float green, float blue, float a, float rotxpass, float rotypass, float rotzpass) {
+    public void drawText(GL2 gl, String whatchars, float x, float y, float z, float red, float green, float blue, float a, float rotxpass, float rotypass, float rotzpass) {
         float totalwidth = 0;
         int k = 0;
         for (int i = 0; i < whatchars.length(); i++) {
@@ -172,7 +172,7 @@ public class FontTranslator {
     }
 
 
-    private void drawtexture(GL gl, Texture texture, float x, float y, float z, float red, float green, float blue, float a, float rotx, float roty, float rotz) {
+    private void drawtexture(GL2 gl, Texture texture, float x, float y, float z, float red, float green, float blue, float a, float rotx, float roty, float rotz) {
 //      boolean islightingon = gl.glIsEnabled(GL.GL_LIGHTING);
 
 //      if (islightingon) {
@@ -198,7 +198,7 @@ public class FontTranslator {
         gl.glColor3f(red, green, blue);//, a
 
         // draw a quad textured to match the sprite
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         {
             gl.glTexCoord2f(0, 0);
             gl.glVertex2f(0, 0);

@@ -1,10 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd.opengc;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class VSI extends BaseGauge {
     double m_NeedleCenter = 54.0;
@@ -18,14 +19,14 @@ public class VSI extends BaseGauge {
         super.display(glAutoDrawable);
 
         // Save matrix
-        gl.glMatrixMode(GL.GL_MODELVIEW);
+        gl.glMatrixMode(GL2.GL_MODELVIEW);
         gl.glPushMatrix();
 
         // Draw in gray-blue
         gl.glColor3ub((byte) 51, (byte) 51, (byte) 76);
 
         // Bottom angular part
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(0.0f, 10.0f);
         gl.glVertex2f(0.0f, 40.0f);
         gl.glVertex2f(4.5f, 44.0f);
@@ -35,7 +36,7 @@ public class VSI extends BaseGauge {
         gl.glEnd();
 
         // Center rectangle
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(4.5f, 44.0f);
         gl.glVertex2f(4.5f, 66.0f);
         gl.glVertex2f(16.0f, 66.0f);
@@ -43,7 +44,7 @@ public class VSI extends BaseGauge {
         gl.glEnd();
 
         // Top angular part
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(4.5f, 66.0f);
         gl.glVertex2f(0.0f, 70.0f);
         gl.glVertex2f(0.0f, 100.0f);

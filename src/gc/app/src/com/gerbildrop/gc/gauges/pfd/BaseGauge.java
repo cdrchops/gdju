@@ -1,11 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd;
 
-import java.nio.ByteBuffer;
+import com.gerbildrop.gc.data.DataSource;
 
 import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
 import javax.media.opengl.GLAutoDrawable;
-
-import com.gerbildrop.gc.data.DataSource;
+import java.nio.ByteBuffer;
 
 public class BaseGauge {
     public float m_PhysicalPositionx;
@@ -28,7 +28,7 @@ public class BaseGauge {
     // The size in pixels of the gauge is the physical size / mm per pixel
     public int m_PixelSizex;
     public int m_PixelSizey;
-    public static GL gl;
+    public static GL2 gl;
 
     public static final ByteBuffer CLBlack = ByteBuffer.wrap(new byte[]{(byte) 0, (byte) 0, (byte) 0});
     public static final ByteBuffer CLWhite = ByteBuffer.wrap(new byte[]{(byte) 255, (byte) 255, (byte) 255});
@@ -193,20 +193,20 @@ public class BaseGauge {
     }
 
     public void display(GLAutoDrawable glAutoDrawable) {
-        gl = glAutoDrawable.getGL();
+        gl = glAutoDrawable.getGL().getGL2();
 
         // The viewport is established in order to clip things
         // outside the bounds of the GaugeComponent
         gl.glViewport(m_PixelPositionx, m_PixelPositiony, m_PixelSizex, m_PixelSizey);
 
-        gl.glMatrixMode(GL.GL_PROJECTION);
+        gl.glMatrixMode(GL2.GL_PROJECTION);
         gl.glLoadIdentity();
 
         // Define the projection so that we're drawing in "real" space
         gl.glOrtho(0, m_Scalex * m_PhysicalSizex, 0, m_Scaley * m_PhysicalSizey, -1, 1);
 
         // Prepare the modelview matrix
-        gl.glMatrixMode(GL.GL_MODELVIEW);
+        gl.glMatrixMode(GL2.GL_MODELVIEW);
         gl.glLoadIdentity();
         gl.glScalef(m_Scalex, m_Scaley, 1.0f);
     }

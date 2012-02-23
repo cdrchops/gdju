@@ -1,5 +1,8 @@
 package com.gerbildrop.gc.fonts;
 
+import javax.imageio.ImageIO;
+import javax.media.opengl.GL;
+import javax.media.opengl.glu.GLU;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.color.ColorSpace;
@@ -18,10 +21,6 @@ import java.nio.ByteOrder;
 import java.nio.IntBuffer;
 import java.util.HashMap;
 import java.util.Hashtable;
-
-import javax.imageio.ImageIO;
-import javax.media.opengl.GL;
-import javax.media.opengl.glu.GLU;
 
 //import org.lwjgl.Sys;
 //import org.lwjgl.opengl.gl;
@@ -96,7 +95,7 @@ public class TextureLoader {
      *
      * @return The loaded texture
      *
-     * @throws IOException Indicates a failure to access the resource
+     * @throws java.io.IOException Indicates a failure to access the resource
      */
     public Texture getTexture(GL gl, String resourceName) throws IOException {
         Texture tex = (Texture) table.get(resourceName);
@@ -127,7 +126,7 @@ public class TextureLoader {
      *
      * @return The loaded texture
      *
-     * @throws IOException Indicates a failure to access the resource
+     * @throws java.io.IOException Indicates a failure to access the resource
      */
     public Texture getTexture(GL gl, String resourceName,
                               int target,
@@ -259,7 +258,7 @@ public class TextureLoader {
      *
      * @return The loaded buffered image
      *
-     * @throws IOException Indicates a failure to find a resource
+     * @throws java.io.IOException Indicates a failure to find a resource
      */
     private BufferedImage loadImage(String ref) throws IOException {
         URL url = TextureLoader.class.getClassLoader().getResource(ref);
@@ -298,7 +297,7 @@ public class TextureLoader {
      *
      * @return The loaded texture
      *
-     * @throws IOException Indicates a failure to access the resource
+     * @throws java.io.IOException Indicates a failure to access the resource
      */
     public Texture getTexture(GL gl, String resourceName, BufferedImage resourceImage) throws IOException {
         Texture tex = (Texture) table.get(resourceName);
@@ -329,7 +328,7 @@ public class TextureLoader {
      *
      * @return The loaded texture
      *
-     * @throws IOException Indicates a failure to access the resource
+     * @throws java.io.IOException Indicates a failure to access the resource
      */
     public Texture getTexture(GL gl, BufferedImage resourceimage,
                               int target,

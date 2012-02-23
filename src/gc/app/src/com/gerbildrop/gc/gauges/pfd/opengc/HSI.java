@@ -1,11 +1,12 @@
 package com.gerbildrop.gc.gauges.pfd.opengc;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
 import com.gerbildrop.gc.util.CircleEvaluator;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class HSI extends BaseGauge {
     public HSI() {
@@ -19,7 +20,7 @@ public class HSI extends BaseGauge {
         CircleEvaluator aCircle = new CircleEvaluator(gl);
 
         // First, store the "root" position of the gauge component
-        gl.glMatrixMode(GL.GL_MODELVIEW);
+        gl.glMatrixMode(GL2.GL_MODELVIEW);
         gl.glPushMatrix();
 
         // Move to the center of the window
@@ -38,7 +39,7 @@ public class HSI extends BaseGauge {
         // Remember, the coordinate system is now centered in the gauge component
         gl.glColor3ub((byte) 179, (byte) 102, (byte) 0);
 
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(-300, -300);
         gl.glVertex2f(-300, 0);
         gl.glVertex2f(300, 0);
@@ -50,7 +51,7 @@ public class HSI extends BaseGauge {
         // Remember, the coordinate system is now centered in the gauge component
         gl.glColor3ub((byte) 0, (byte) 153, (byte) 204);
 
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(-300, 0);
         gl.glVertex2f(-300, 300);
         gl.glVertex2f(300, 300);
@@ -195,7 +196,7 @@ public class HSI extends BaseGauge {
         gl.glTranslated(47, 49, 0);
 
         // Draw the center detent
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(0.0f, 46.0f);
         gl.glVertex2f(-2.3f, 49.0f);
         gl.glVertex2f(2.3f, 49.0f);
@@ -310,7 +311,7 @@ public class HSI extends BaseGauge {
         // The center axis indicator
         // Black background
         gl.glColor3f((byte) 0, (byte) 0, (byte) 0);
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(1.25f, 1.25f);
         gl.glVertex2f(1.25f, -1.25f);
         gl.glVertex2f(-1.25f, -1.25f);
@@ -331,14 +332,14 @@ public class HSI extends BaseGauge {
         // The left part
         // Black background
         gl.glColor3f((byte) 0, (byte) 0, (byte) 0);
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(-39, 1.25f);
         gl.glVertex2f(-19, 1.25f);
         gl.glVertex2f(-19, -1.25f);
         gl.glVertex2f(-39, -1.25f);
         gl.glVertex2f(-39, 1.25f);
         gl.glEnd();
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(-19, 1.25f);
         gl.glVertex2f(-19, -5.75f);
         gl.glVertex2f(-22, -5.75f);
@@ -361,14 +362,14 @@ public class HSI extends BaseGauge {
         // The right part
         // Black background
         gl.glColor3f((byte) 0, (byte) 0, (byte) 0);
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(39, 1.25f);
         gl.glVertex2f(19, 1.25f);
         gl.glVertex2f(19, -1.25f);
         gl.glVertex2f(39, -1.25f);
         gl.glVertex2f(39, 1.25f);
         gl.glEnd();
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(19, 1.25f);
         gl.glVertex2f(19, -5.75f);
         gl.glVertex2f(22, -5.75f);

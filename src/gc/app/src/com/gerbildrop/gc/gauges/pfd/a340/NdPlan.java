@@ -1,12 +1,12 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
 import com.gerbildrop.gc.symbol.AircraftSymbol;
 import com.gerbildrop.gc.util.CircleEvaluator;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GLAutoDrawable;
 
 public class NdPlan extends BaseGauge {
     public NdPlan() {

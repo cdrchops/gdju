@@ -3,6 +3,7 @@ package com.gerbildrop.gc.util;
 import com.gerbildrop.gc.fonts.Font;
 
 import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
 import javax.media.opengl.GLAutoDrawable;
 
 public class GLUtil {
@@ -16,7 +17,7 @@ public class GLUtil {
         Font.display(glAutoDrawable, x, y, value);
     }
 
-    public static void evalCircle(GL gl, double x, double y, double r, int n, double start, double end) {
+    public static void evalCircle(GL2 gl, double x, double y, double r, int n, double start, double end) {
         double angle = 0;
         double step = 0;
 

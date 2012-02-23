@@ -1,14 +1,14 @@
 package com.gerbildrop.gc;
 
+import javax.media.opengl.GLCapabilities;
+import javax.media.opengl.GLProfile;
+import javax.media.opengl.awt.GLCanvas;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
-import javax.media.opengl.GLCanvas;
-import javax.media.opengl.GLCapabilities;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 
 /** This is a basic JOGL app. Feel free to reuse this code or modify it. */
 public class GlassCockpitMain extends JFrame {
@@ -42,7 +42,7 @@ public class GlassCockpitMain extends JFrame {
         final GlassCockpitView fpv = new GlassCockpitView();
 
         //only three JOGL lines of code ... and here they are
-        final GLCapabilities glcaps = new GLCapabilities();
+        final GLCapabilities glcaps = new GLCapabilities(GLProfile.getDefault());
         glcanvas = new GLCanvas(glcaps);
         glcanvas.addGLEventListener(fpv);
         glcanvas.addKeyListener(fpv);

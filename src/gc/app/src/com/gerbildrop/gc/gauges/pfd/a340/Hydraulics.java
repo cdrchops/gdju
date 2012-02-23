@@ -4,6 +4,7 @@ import com.gerbildrop.gc.gauges.pfd.BaseGauge;
 import com.gerbildrop.gc.util.CircleEvaluator;
 
 import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
 import javax.media.opengl.GLAutoDrawable;
 
 public class Hydraulics extends BaseGauge {
@@ -180,7 +181,7 @@ public class Hydraulics extends BaseGauge {
 
 
     void reservoir(GLAutoDrawable glAutoDrawable, float fLevel, boolean bLowAirPress, boolean bOverheat) {
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glColor3ubv(CLGreen);
         gl.glVertex3f(0.000f, -0.031f, 0);
         gl.glVertex3f(0.015f, -0.031f, 0);

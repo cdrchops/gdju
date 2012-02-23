@@ -1,8 +1,8 @@
 package com.gerbildrop.gc.gauges.cdu.pageSelections;
 
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
+
+import javax.media.opengl.GLAutoDrawable;
 
 public class PosDisplay {
     public static String displayPos = "UTM";

@@ -1,18 +1,18 @@
 package com.gerbildrop.gc;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-import javax.media.opengl.GLCanvas;
-import javax.media.opengl.GLEventListener;
-import javax.media.opengl.glu.GLU;
-
 import com.gerbildrop.gc.display.MFD;
 import com.gerbildrop.gc.display.MfdKeys;
 import com.gerbildrop.gc.gauges.cdu.CDU;
 import com.gerbildrop.gc.gauges.cdu.CduKeys;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
+import javax.media.opengl.awt.GLCanvas;
+import javax.media.opengl.GLEventListener;
+import javax.media.opengl.glu.GLU;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /** For our purposes only two of the GLEventListeners matter. Those would be init() and display(). */
 public class GlassCockpitView implements GLEventListener, KeyListener {
@@ -42,9 +42,9 @@ public class GlassCockpitView implements GLEventListener, KeyListener {
     }
 
     private void initView(final GLAutoDrawable glAutoDrawable) {
-        final GL gl = glAutoDrawable.getGL();
+        final GL2 gl = glAutoDrawable.getGL().getGL2();
         final GLU glu = new GLU();
-        gl.glMatrixMode(GL.GL_MODELVIEW);
+        gl.glMatrixMode(GL2.GL_MODELVIEW);
         gl.glLoadIdentity();
 
         gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -65,12 +65,12 @@ public class GlassCockpitView implements GLEventListener, KeyListener {
     public void init(final GLAutoDrawable glAutoDrawable) {
         //The mode is GL.GL_MODELVIEW by default
         //We will also use the default ViewPort
-        final GL gl = glAutoDrawable.getGL();
+        final GL2 gl = glAutoDrawable.getGL().getGL2();
         final GLU glu = new GLU();
 
         //We're changing the mode to GL.GL_PROJECTION
         //This is where we set up the camera
-        gl.glMatrixMode(GL.GL_PROJECTION);
+        gl.glMatrixMode(GL2.GL_PROJECTION);
         gl.glLoadIdentity();
 
         // Aspect is width/height
@@ -121,5 +121,8 @@ public class GlassCockpitView implements GLEventListener, KeyListener {
                         final int i1,
                         final int i2,
                         final int i3) {
+    }
+
+    public void dispose(GLAutoDrawable glAutoDrawable) {
     }
 }

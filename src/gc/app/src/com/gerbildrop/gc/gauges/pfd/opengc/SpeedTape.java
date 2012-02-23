@@ -1,10 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd.opengc;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class SpeedTape extends BaseGauge {
     private float indent_x;
@@ -29,14 +30,14 @@ public class SpeedTape extends BaseGauge {
         }
 
         // Save matrix
-        gl.glMatrixMode(GL.GL_MODELVIEW);
+        gl.glMatrixMode(GL2.GL_MODELVIEW);
         gl.glPushMatrix();
 
         // Draw in gray-blue
         gl.glColor3ub((byte) 51, (byte) 51, (byte) 76);
 
         // Draw the background rectangle
-        gl.glBegin(GL.GL_POLYGON);
+        gl.glBegin(GL2.GL_POLYGON);
         gl.glVertex2f(0.0f, 0.0f);
         gl.glVertex2f(0.0f, m_PhysicalSizey);
         gl.glVertex2f(indent_x, m_PhysicalSizey);

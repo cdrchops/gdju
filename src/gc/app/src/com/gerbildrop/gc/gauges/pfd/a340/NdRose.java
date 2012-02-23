@@ -1,13 +1,14 @@
 package com.gerbildrop.gc.gauges.pfd.a340;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
 import com.gerbildrop.gc.symbol.AircraftSymbol;
 import com.gerbildrop.gc.util.CircleEvaluator;
 import com.gerbildrop.util.StringUtil;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class NdRose extends BaseGauge {
     public NdRose() {
@@ -138,7 +139,7 @@ public class NdRose extends BaseGauge {
         // Paint the chronometer if active
         if (m_bChronoActve) {
             gl.glColor3ubv(CLGrey);
-            gl.glBegin(GL.GL_QUADS);
+            gl.glBegin(GL2.GL_QUADS);
             gl.glVertex2f(0.000f, 0.210f);
             gl.glVertex2f(0.178f, 0.210f);
             gl.glVertex2f(0.178f, 0.155f);
@@ -164,7 +165,7 @@ public class NdRose extends BaseGauge {
 
         // Paint current heading needle
         gl.glColor3ubv(CLYellow);
-        gl.glBegin(GL.GL_QUADS);
+        gl.glBegin(GL2.GL_QUADS);
         gl.glVertex2f(0.476f, 0.840f);
         gl.glVertex2f(0.484f, 0.840f);
         gl.glVertex2f(0.484f, 0.785f);

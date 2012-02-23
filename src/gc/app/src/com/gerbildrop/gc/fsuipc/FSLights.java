@@ -19,11 +19,11 @@ public class FSLights extends FSUIPC {
         if (aOn) {
             data[0] = (byte) (current | 0x01);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         } else {
             data[0] = (byte) (current & 0xfe);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         }
     }
 
@@ -37,11 +37,11 @@ public class FSLights extends FSUIPC {
         if (aOn) {
             data[0] = (byte) (current | 0x02);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         } else {
             data[0] = (byte) (current & 0xfd);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         }
     }
 
@@ -55,11 +55,11 @@ public class FSLights extends FSUIPC {
         if (aOn) {
             data[0] = (byte) (current | 0x04);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         } else {
             data[0] = (byte) (current & 0xfb);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         }
     }
 
@@ -73,11 +73,11 @@ public class FSLights extends FSUIPC {
         if (aOn) {
             data[0] = (byte) (current | 0x08);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         } else {
             data[0] = (byte) (current & 0xf7);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         }
     }
 
@@ -91,11 +91,11 @@ public class FSLights extends FSUIPC {
         if (aOn) {
             data[0] = (byte) (current | 0x10);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         } else {
             data[0] = (byte) (current & 0xef);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         }
     }
 
@@ -109,11 +109,11 @@ public class FSLights extends FSUIPC {
         if (aOn) {
             data[0] = (byte) (current | 0x20);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         } else {
             data[0] = (byte) (current & 0xdf);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         }
     }
 
@@ -127,11 +127,11 @@ public class FSLights extends FSUIPC {
         if (aOn) {
             data[0] = (byte) (current | 0x40);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         } else {
             data[0] = (byte) (current & 0xbf);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         }
     }
 
@@ -146,11 +146,11 @@ public class FSLights extends FSUIPC {
         if (aOn) {
             data[0] = (byte) (current | 0x80);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         } else {
             data[0] = (byte) (current & 0x7f);
             data[1] = 0;
-            fsuipc_wrapper.WriteData(0x0d0c, 2, data);
+            fsuipc_wrapper.writeData(0x0d0c, 2, data);
         }
     }
 

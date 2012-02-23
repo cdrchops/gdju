@@ -1,10 +1,11 @@
 package com.gerbildrop.gc.gauges.pfd.opengc;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
 
 public class AltitudeTicker extends BaseGauge {
     public AltitudeTicker() {
@@ -52,7 +53,7 @@ public class AltitudeTicker extends BaseGauge {
             alt = alt - 10000 * (int) (alt / 10000);
         } else { // draw a green square
             gl.glColor3f(0, (byte) 179, 0);
-            gl.glBegin(GL.GL_POLYGON);
+            gl.glBegin(GL2.GL_POLYGON);
             gl.glVertex2f(4.0f, (float) texty);
             gl.glVertex2f(4.0f, (float) texty + (float) bigFontHeight);
             gl.glVertex2f(8.0f, (float) texty + (float) bigFontHeight);

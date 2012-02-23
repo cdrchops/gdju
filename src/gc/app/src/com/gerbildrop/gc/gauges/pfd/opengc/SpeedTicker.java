@@ -1,10 +1,10 @@
 package com.gerbildrop.gc.gauges.pfd.opengc;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GLAutoDrawable;
-
 import com.gerbildrop.gc.fonts.Font;
 import com.gerbildrop.gc.gauges.pfd.BaseGauge;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GLAutoDrawable;
 
 public class SpeedTicker extends BaseGauge {
     public SpeedTicker() {
